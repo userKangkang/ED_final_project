@@ -1,5 +1,4 @@
 "use client"
-import Style from "./icons.module.css";
 import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react";
 import Info from "./NextuiIcons/info";
