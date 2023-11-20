@@ -20,7 +20,7 @@ export default function TopMessages(props) {
         return(
             <ListboxItem key={data.id} className={"max-w-full"}>
                 <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
-                <div className="flex my-1 flex-row items-center text-sm text-white">
+                <div className="flex my-1 flex-row items-center text-sm">
                     {icon()}
                     <span className={"truncate ml-3 text-sm"}>{data.title}</span>
                 </div>
