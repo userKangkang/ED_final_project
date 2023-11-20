@@ -2,16 +2,26 @@
 import Style from "./icons.module.css";
 import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react";
+import Info from "./NextuiIcons/info";
+import Message from "./NextuiIcons/message";
 
 export default function TopMessages(props) {
     
+    
+
     const messageList = props.datas.map(data => {
+        const icon = function () {
+            if(data.isQuestion) {
+                return <Message/>;
+            } else {
+                return <Info/>;
+            }
+        } ;
         return(
             <ListboxItem key={data.id} className={"max-w-full"}>
                 <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
                 <div className="flex my-1 flex-row items-center text-sm text-white">
-                    {data.isQuestion ? <span className={Style.iconfont}>&#xe689;</span>
-                     : <span className={Style.iconfont}>&#xe792;</span> }
+                    {icon()}
                     <span className={"truncate ml-3 text-sm"}>{data.title}</span>
                 </div>
                 <div className="flex flex-row items-center text-xs text-gray-600">
@@ -34,7 +44,7 @@ export default function TopMessages(props) {
                 {messageList}
             </Listbox>
             </div>
-          <div className={"my-0 mx-auto text-xs flex justify-center bg-white"}>更多</div>
+          {/* <div className={"my-0 mx-auto text-xs flex justify-center bg-white"}>更多</div> */}
         </>
     );
 }
