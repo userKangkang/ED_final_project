@@ -43,7 +43,7 @@ export default function HomePage() {
           <HistoryMessages datas={DATA2}/>
         </div>
         <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>
-          <RootMode/>
+          {/* <RootMode/> */}
         </div>
       </main>
     </>

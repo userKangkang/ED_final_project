@@ -1,10 +1,14 @@
+"use client"
 import Style from "./icons.module.css";
+import React from "react";
+import {Listbox, ListboxItem} from "@nextui-org/react";
 
 export default function TopMessages(props) {
     
     const messageList = props.datas.map(data => {
         return(
-            <li className="px-3 flex flex-col w-full h-16  border-t-2 justify-center" key={props.id}>
+            <ListboxItem key={data.id} className={"max-w-full"}>
+                <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
                 <div className="flex my-1 flex-row items-center text-sm text-white">
                     {data.isQuestion ? <span className={Style.iconfont}>&#xe689;</span>
                      : <span className={Style.iconfont}>&#xe792;</span> }
@@ -15,16 +19,21 @@ export default function TopMessages(props) {
                     <span className={"mr-2"}>{data.author}</span>
                     <span className={""}>{data.date}</span>
                 </div>
-            </li>
+            </div>
+            </ListboxItem>
         );
     });
 
     return(
         <>
           <div className={"w-full h-5 bg-gray-400"}></div>
-          <ul>
-            {messageList}
-          </ul>
+          <div className="w-full">
+            <Listbox aria-label="Actions"
+            onAction={(key) => alert(key)}
+            className="w-full max-w-full">
+                {messageList}
+            </Listbox>
+            </div>
           <div className={"my-0 mx-auto text-xs flex justify-center bg-white"}>更多</div>
         </>
     );

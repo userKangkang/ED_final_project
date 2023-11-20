@@ -9,7 +9,7 @@ export default function RootMode() {
           width={240}
           height={240}
           alt="NextUI Fruit Image with Zoom"
-          src="/../../../public/SJTU.png"
+          src="../../../public/SJTU.png"
         />
     </div>
     
