@@ -2,6 +2,7 @@
 
 import HomeIcon from "@/app/homeComponents/HomeIcon";
 import Icon from "@/app/homeComponents/Icon";
+import Image from "next/image";
 
 export default function Search() {
     const search = {
@@ -10,6 +11,13 @@ export default function Search() {
         alt : "search",
     }
     return (
-        <Icon icon={search} borderWidth={0} shadow={false}/>
+        <div key={search.id} className={"rounded-2xl"}>
+            <Image
+                src={search.svg}
+                alt={search.alt}
+                width={30}
+                height={30}
+                />
+        </div>
     )
 }

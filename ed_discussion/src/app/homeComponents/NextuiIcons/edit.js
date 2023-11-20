@@ -2,6 +2,7 @@
 
 import HomeIcon from "@/app/homeComponents/HomeIcon";
 import Icon from "@/app/homeComponents/Icon";
+import MessageIcon from "@/app/homeComponents/NextuiIcons/MessageIcon";
 
 export default function Edit() {
     const search = {
@@ -10,6 +11,6 @@ export default function Edit() {
         alt : "search",
     }
     return (
-        <Icon icon={search} className="border-1" borderWidth={0} shadow={false}/>
+        <MessageIcon icon={search}/>
     )
 }
