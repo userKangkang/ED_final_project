@@ -21,6 +21,7 @@ export default function UserPicture({person}) {
                     <p className="font-semibold">zoey@example.com</p>
                 </DropdownItem>
                 <DropdownItem key="settings">My Settings</DropdownItem>
+                <DropdownItem key={"notifications"}>Notifications</DropdownItem>
                 <DropdownItem key="logout" color="danger">
                     Log Out
                 </DropdownItem>
