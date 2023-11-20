@@ -5,6 +5,7 @@ import SearchBox from './homeComponents/searchBox';
 import TopMessages from './homeComponents/topMessage';
 import HistoryMessages from './homeComponents/historyMessage';
 import LeftBar from "@/app/homeComponents/LeftBar";
+import Classes from "@/app/homeComponents/Classes";
 
 
 
@@ -32,7 +33,7 @@ export default function HomePage() {
       <div className={"flex max-h-screen flex-row items-start p-0 min-w-screen"}>
         <div className={"w-1/6 min-w-150px border-solid border-r-2 border-gray-400 min-h-screen flex flex-col items-start"}>
           <NewButton/>
-          <div className={"text-xs self-start ml-2 text-white mt-4 mb-5"}>类别</div>
+          <Classes />
           <LeftBar />
         </div>
         <div className={"w-96 border-solid border-r-2 border-gray-400 h-full"}>
