@@ -20,12 +20,12 @@ export default function HistoryMessages(props) {
     });
 
     return(
-        <>
-          <div className={"w-full h-5 bg-gray-400"}></div>
+        <div className={"overflow-hidden"}>
+          <div className={"w-full h-5 bg-gray-400 overflow-hidden"}></div>
           <ul className={"truncate overflow-hidden max-h-full"}>
             {messageList}
           </ul>
           <div className={"my-0 mx-auto text-xs flex justify-center bg-white"}>更多</div>
-        </>
+        </div>
     );
 }

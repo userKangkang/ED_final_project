@@ -9,6 +9,7 @@ import Header from "@/app/homeComponents/Navbar"
 
 
 
+
 const DATA = [
   {id: "01", isQuestion: true, title: "Lecture Time this week", color: "red-500", type: "General", author: "Jingfeng Sun", date: "Yesterday"},
   {id: "02", isQuestion: true, title: "Final Project: SEP QLink", color: "red-500", type: "General", author: "Weiquan Huang", date: "2 Days Ago"},
@@ -29,20 +30,22 @@ const DATA2 = [
 export default function HomePage() {
   return(
     <>
-      <Header />
-      <div className={"flex max-h-screen flex-row items-start p-0 min-w-screen"}>
-        <div className={"w-1/6 min-w-150px border-solid border-r-2 border-gray-400 min-h-screen flex flex-col items-start"}>
+      <Header/>
+      <main className={"flex max-h-screen flex-row items-start p-0 min-w-screen"}>
+        <div className={"w-1/6 w-72 border-solid border-r-2 border-gray-400 min-h-screen flex flex-col items-start"}>
           <NewButton/>
           <Classes />
           <LeftBar />
         </div>
-        <div className={"w-96 border-solid border-r-2 border-gray-400 h-full"}>
+        <div className={"w-96 border-solid border-r-2 border-gray-400 h-screen overflow-y-scroll"}>
           <SearchBox/>
           <TopMessages datas={DATA}/>
           <HistoryMessages datas={DATA2}/>
         </div>
-        <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>detail message</div>
-      </div>
+        <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>
+          <RootMode/>
+        </div>
+      </main>
     </>
   );
 }
