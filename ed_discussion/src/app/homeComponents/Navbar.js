@@ -6,7 +6,7 @@ import Hat from "@/app/homeComponents/Hat";
 
 export default function Header() {
     return (
-        <Navbar isBordered isBlurred={true} className={"bg-gradient-to-r from-[#180828] to-[#301050]"}>
+        <Navbar isBordered isBlurred={true} className={"bg-gradient-to-r from-[#481878] to-[#301050]"}>
             <NavbarBrand>
                 <Hat />
                 <p className="font-bold text-inherit ml-3">Discussion</p>
