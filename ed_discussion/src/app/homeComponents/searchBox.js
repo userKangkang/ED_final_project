@@ -17,7 +17,7 @@ export default function SearchBox() {
                     innerWrapper: "bg-transparent",
                     inputWrapper: [
                         "shadow-xl",
-                        "bg-[#180828]/70",
+                        "bg-default/60",
                         "dark:bg-default/60",
                         "backdrop-blur-xl",
                         "backdrop-saturate-200",
