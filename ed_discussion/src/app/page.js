@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Bell from "./Bell"
 import Header from "@/app/Header";
+import HomeButton from "@/app/HomeButton";
+import ProfileButton from "@/app/ProfileButton";
 
 // export default function Home() {
 //   return (
@@ -116,12 +118,8 @@ import Header from "@/app/Header";
 export default function HomePage() {
     return (
         <main className={"flex min-h-screen flex-col items-center justify-between p-0"}>
-            <Header className={"flex"}>
-                <li className={"p-2"}>
-                    <Bell />
-                </li>
-                <li >Logo</li>
-            </Header>
+            <Header />
+
         </main>
     )
 }

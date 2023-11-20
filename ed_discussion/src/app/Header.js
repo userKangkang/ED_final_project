@@ -1,9 +1,26 @@
-export default function Header({children}) {
+import Bell from "@/app/Bell";
+import HomeButton from "@/app/HomeButton";
+import ProfileButton from "@/app/ProfileButton";
+
+export default function Header() {
     return (
-        <div className={"flex flex-col flex-wrap w-full bg-cyan-200"}>
+        <nav className={"flex flex-col flex-wrap w-full bg-gray-500"}>
             <ul className={"flex flex-grow justify-between"}>
-                {children}
+                <li className={"p-2"}>
+                    <Bell />
+                </li>
+                <li className={"p-2 grid grid-cols-2 gap-0"}>
+                    <HomeButton />
+                    <ProfileButton person={jingfeng}/>
+                </li>
             </ul>
-        </div>
+        </nav>
     )
+}
+
+// TODO: remove me
+const jingfeng = {
+    id : "jingfeng",
+    picture : "/profilePhoto.jpeg",
+    name : "jingfeng",
 }
