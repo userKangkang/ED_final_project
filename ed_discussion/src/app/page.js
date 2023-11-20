@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Header from './Header';
 import NewButton from "./homeComponents/newButton";
-import TypeTitle from './homeComponents/typeTitle';
 import SearchBox from './homeComponents/searchBox';
 import TopMessages from './homeComponents/topMessage';
 import HistoryMessages from './homeComponents/historyMessage';
+import LeftBar from "@/app/homeComponents/LeftBar";
 
 
 
@@ -28,16 +28,12 @@ const DATA2 = [
 export default function HomePage() {
   return(
     <>
-      <Header/>
-      <main className={"flex max-h-screen flex-row items-start p-0 min-w-screen"}>
+      <Header />
+      <div className={"flex max-h-screen flex-row items-start p-0 min-w-screen"}>
         <div className={"w-1/6 min-w-150px border-solid border-r-2 border-gray-400 min-h-screen flex flex-col items-start"}>
           <NewButton/>
-          <div class={"text-xs self-start ml-2 text-gray-800 mt-4 mb-5"}>类别</div>
-          <TypeTitle color="bg-red-500" name="General"/>
-          <TypeTitle color="bg-orange-500" name="Lectures"/>
-          <TypeTitle color="bg-yellow-500" name="Vitamins"/>
-          <TypeTitle color="bg-green-500" name="Projects"/>
-          <TypeTitle color="bg-blue-500" name="Social"/>
+          <div className={"text-xs self-start ml-2 text-white mt-4 mb-5"}>类别</div>
+          <LeftBar />
         </div>
         <div className={"w-96 border-solid border-r-2 border-gray-400 h-full"}>
           <SearchBox/>
@@ -45,7 +41,7 @@ export default function HomePage() {
           <HistoryMessages datas={DATA2}/>
         </div>
         <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>detail message</div>
-      </main>
+      </div>
     </>
   );
 }

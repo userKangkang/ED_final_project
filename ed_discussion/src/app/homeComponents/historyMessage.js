@@ -4,8 +4,8 @@ export default function HistoryMessages(props) {
     
     const messageList = props.datas.map(data => {
         return(
-            <li className="overflow-hidden ellipsis px-3 flex flex-col w-full h-16 bg-white border-t-2 justify-center" key={props.id}>
-                <div className="flex my-1 flex-row items-center text-sm text-gray-600">
+            <li className="overflow-hidden ellipsis px-3 flex flex-col w-full h-16  border-t-2 justify-center" key={props.id}>
+                <div className="flex my-1 flex-row items-center text-sm text-white">
                     {data.isQuestion ? <span className={Style.iconfont}>&#xe689;</span>
                      : <span className={Style.iconfont}>&#xe792;</span> }
                     <span className={"truncate ml-3 text-sm"}>{data.title}</span>
