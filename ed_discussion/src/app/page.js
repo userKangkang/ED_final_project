@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Header from './Header';
 import NewButton from "./homeComponents/newButton";
 import SearchBox from './homeComponents/searchBox';
 import TopMessages from './homeComponents/topMessage';
 import HistoryMessages from './homeComponents/historyMessage';
 import LeftBar from "@/app/homeComponents/LeftBar";
 import Classes from "@/app/homeComponents/Classes";
+import Header from "@/app/homeComponents/Navbar"
 
 
 
