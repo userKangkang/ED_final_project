@@ -1,11 +1,11 @@
-import NewButton from "@/homeComponents/newButton";
-import SearchBox from '@/homeComponents/searchBox';
-import TopMessages from '@/homeComponents/topMessage';
-import HistoryMessages from '@/homeComponents/historyMessage';
-import LeftBar from "@/homeComponents/LeftBar";
-import Classes from "@/homeComponents/Classes";
-import Header from "@/homeComponents/Navbar"
-import EditMode from '@/detailBar/editMode';
+import NewButton from "@/Components/homeComponents/newButton";
+import SearchBox from '@/Components/homeComponents/searchBox';
+import TopMessages from '@/Components/homeComponents/topMessage';
+import HistoryMessages from '@/Components/homeComponents/historyMessage';
+import LeftBar from "@/Components/homeComponents/LeftBar";
+import Classes from "@/Components/homeComponents/Classes";
+import Header from "@/Components/homeComponents/Navbar"
+import EditMode from '@/Components/detailBar/editMode';
 
 
 

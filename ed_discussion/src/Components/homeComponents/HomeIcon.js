@@ -1,5 +1,5 @@
 "use client"
-import Icon from "@/homeComponents/Icon";
+import Icon from "@/Components/homeComponents/Icon";
 
 export default function HomeIcon() {
     const homeIcon = {

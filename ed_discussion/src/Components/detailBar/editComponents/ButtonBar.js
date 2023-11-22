@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
-import Message from "@/homeComponents/NextuiIcons/message";
-import Question from "@/homeComponents/NextuiIcons/question";
+import Message from "@/Components/homeComponents/NextuiIcons/message";
+import Question from "@/Components/homeComponents/NextuiIcons/question";
 
 export default function ButtonBar(){
     return (

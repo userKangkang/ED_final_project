@@ -1,6 +1,6 @@
 "use client"
 
-import MessageIcon from "@/homeComponents/NextuiIcons/MessageIcon";
+import MessageIcon from "@/Components/homeComponents/NextuiIcons/MessageIcon";
 
 export default function Message() {
     const search = {

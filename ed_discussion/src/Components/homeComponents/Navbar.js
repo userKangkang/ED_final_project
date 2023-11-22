@@ -1,8 +1,8 @@
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-import UserPicture from "@/homeComponents/UserPicture";
-import HomeIcon from "@/homeComponents/HomeIcon";
-import Hat from "@/homeComponents/Hat";
+import UserPicture from "@/Components/homeComponents/UserPicture";
+import HomeIcon from "@/Components/homeComponents/HomeIcon";
+import Hat from "@/Components/homeComponents/Hat";
 
 export default function Header() {
     return (
