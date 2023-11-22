@@ -1,12 +1,12 @@
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-import UserPicture from "@/app/homeComponents/UserPicture";
-import HomeIcon from "@/app/homeComponents/HomeIcon";
-import Hat from "@/app/homeComponents/Hat";
+import UserPicture from "@/homeComponents/UserPicture";
+import HomeIcon from "@/homeComponents/HomeIcon";
+import Hat from "@/homeComponents/Hat";
 
 export default function Header() {
     return (
-        <Navbar isBordered isBlurred={true} className={"bg-gradient-to-r from-[#481878] to-[#301050]"}>
+        <Navbar isBordered isBlurred={true} position={"static"} className={"bg-gradient-to-r from-[#481878] to-[#301050]"}>
             <NavbarBrand>
                 <div className={"flex items-center"}>
                     <Hat />

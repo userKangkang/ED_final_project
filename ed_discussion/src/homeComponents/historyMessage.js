@@ -2,7 +2,7 @@
 import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react";
 import Info from "./NextuiIcons/info";
-import Message from "@/app/homeComponents/NextuiIcons/message";
+import Message from "@/homeComponents/NextuiIcons/message";
 export default function HistoryMessages(props) {
     
 

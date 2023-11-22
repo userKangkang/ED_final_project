@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import NewButton from "./homeComponents/newButton";
-import SearchBox from './homeComponents/searchBox';
-import TopMessages from './homeComponents/topMessage';
-import HistoryMessages from './homeComponents/historyMessage';
-import LeftBar from "@/app/homeComponents/LeftBar";
-import Classes from "@/app/homeComponents/Classes";
-import Header from "@/app/homeComponents/Navbar"
-import EditMode from './detailBar/editMode';
+import NewButton from "@/homeComponents/newButton";
+import SearchBox from '@/homeComponents/searchBox';
+import TopMessages from '@/homeComponents/topMessage';
+import HistoryMessages from '@/homeComponents/historyMessage';
+import LeftBar from "@/homeComponents/LeftBar";
+import Classes from "@/homeComponents/Classes";
+import Header from "@/homeComponents/Navbar"
+import EditMode from '@/detailBar/editMode';
 
 
 

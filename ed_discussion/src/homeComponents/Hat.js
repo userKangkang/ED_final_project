@@ -1,6 +1,6 @@
 "use client"
 
-import Icon from "@/app/homeComponents/Icon";
+import Icon from "@/homeComponents/Icon";
 
 export default function Hat() {
     const hat = {
