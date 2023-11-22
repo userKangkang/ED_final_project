@@ -6,7 +6,7 @@ import Hat from "@/Components/homeComponents/Hat";
 
 export default function Header() {
     return (
-        <Navbar isBordered isBlurred={true} className={"bg-gradient-to-r from-[#481878] to-[#301050]"}>
+        <Navbar isBordered isBlurred={true} position={"static"} className={"bg-gradient-to-r from-[#481878] to-[#301050]"}>
             <NavbarBrand>
                 <div className={"flex items-center"}>
                     <Hat />
