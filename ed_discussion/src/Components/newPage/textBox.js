@@ -4,7 +4,7 @@ import {Card, CardHeader, CardBody, Image, Button, Chip, Textarea} from "@nextui
 export default function TextBox() {
     return (
         <div className={"flex justify-center mt-5"}>
-            <Card className={"py-4 w-11/12"}>
+            <Card className={"py-4 w-full m-3"}>
                 <CardHeader className="pb-0 pt-0 px-4 flex-row justify-between">
                     <Chip color={"default"}>Paragraph</Chip>
                     <Button isIconOnly={true} size={"sm"} color={"secondary"}>
