@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react"
-import {ListboxWrapper} from "@/app/homeComponents/ListBoxWrapper";
-import TypeTitle from "@/app/homeComponents/TypeTitle";
+import {ListboxWrapper} from "@/Components/homeComponents/ListBoxWrapper";
+import TypeTitle from "@/Components/homeComponents/TypeTitle";
 
 export default function LeftBar() {
     return (

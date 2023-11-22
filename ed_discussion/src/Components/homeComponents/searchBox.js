@@ -1,6 +1,6 @@
 import React from "react";
 import {Input} from "@nextui-org/react";
-import Search from "@/app/homeComponents/NextuiIcons/search";
+import Search from "@/Components/homeComponents/NextuiIcons/search";
 
 export default function SearchBox() {
     return (

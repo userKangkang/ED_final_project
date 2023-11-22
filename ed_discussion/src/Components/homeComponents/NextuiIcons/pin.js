@@ -1,6 +1,6 @@
 "use client"
 
-import MessageIcon from "@/app/homeComponents/NextuiIcons/MessageIcon";
+import MessageIcon from "@/Components/homeComponents/NextuiIcons/MessageIcon";
 
 export default function Pin() {
     const search = {
