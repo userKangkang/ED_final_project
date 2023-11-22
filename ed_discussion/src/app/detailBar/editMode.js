@@ -15,6 +15,5 @@ export default function EditMode() {
             <SwitchType/>
         </div>
     </div>
-    
   );
 }
