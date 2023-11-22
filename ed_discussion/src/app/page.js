@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import NewButton from "@/homeComponents/newButton";
 import SearchBox from '@/homeComponents/searchBox';
 import TopMessages from '@/homeComponents/topMessage';
