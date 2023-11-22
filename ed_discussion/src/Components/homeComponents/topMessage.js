@@ -15,7 +15,7 @@ export default function TopMessages(props) {
             } else {
                 return <Info/>;
             }
-        } ;
+        };
         return(
             <ListboxItem key={data.id} className={"max-w-full"}>
                 <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
