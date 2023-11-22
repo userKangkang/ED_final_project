@@ -6,7 +6,7 @@ import HistoryMessages from './homeComponents/historyMessage';
 import LeftBar from "@/app/homeComponents/LeftBar";
 import Classes from "@/app/homeComponents/Classes";
 import Header from "@/app/homeComponents/Navbar"
-
+import EditMode from './detailBar/editMode';
 
 
 
@@ -43,7 +43,7 @@ export default function HomePage() {
           <HistoryMessages datas={DATA2}/>
         </div>
         <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>
-          {/* <RootMode/> */}
+          <EditMode/>
         </div>
       </main>
     </>
