@@ -9,6 +9,7 @@ import EditMode from '@/Components/detailBar/editMode';
 
 
 
+
 const DATA = [
   {id: "01", isQuestion: true, title: "Lecture Time this week", color: "red-500", type: "General", author: "Jingfeng Sun", date: "Yesterday"},
   {id: "02", isQuestion: true, title: "Final Project: SEP QLink", color: "red-500", type: "General", author: "Weiquan Huang", date: "2 Days Ago"},
