@@ -6,6 +6,7 @@ import LeftBar from "@/Components/homeComponents/LeftBar";
 import Classes from "@/Components/homeComponents/Classes";
 import Header from "@/Components/homeComponents/Navbar"
 import EditMode from '@/Components/detailBar/editMode';
+import TextBox from "@/Components/newPage/textBox";
 
 
 
@@ -31,7 +32,7 @@ export default function HomePage() {
   return(
     <>
       <Header/>
-      <main className={"flex max-h-screen flex-row items-start p-0 min-w-screen bg-gradient-to-r from-[#0D001A] to-[#301050]"}>
+      <main className={"flex max-h-screen flex-row items-start p-0 min-w-screen bg-gradient-to-r from-[#0D001A] to-[#180828]"}>
         <div className={"w-1/6 w-72 border-solid border-r-2 border-gray-400 min-h-screen flex flex-col items-start"}>
           <NewButton/>
           <Classes />
@@ -44,6 +45,8 @@ export default function HomePage() {
         </div>
         <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>
           <EditMode/>
+          <TextBox />
+          {/* <RootMode/> */}
         </div>
       </main>
     </>
