@@ -4,13 +4,16 @@ import {Image} from "@nextui-org/react";
 
 export default function RootMode() {
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-screen flex flex-col items-center justify-center">
         <Image
-          width={240}
-          height={240}
+          width={200}
+          height={200}
           alt="NextUI Fruit Image with Zoom"
-          src="../../../public/SJTU.png"
+          src="/SJTU.png"
         />
+        <div className="text-center text-sm text-gray-500">
+          打开或新建一个主题
+        </div>
     </div>
     
   );

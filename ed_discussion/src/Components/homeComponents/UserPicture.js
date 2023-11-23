@@ -1,6 +1,8 @@
 "use client"
 import React from "react";
 import {DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+
 export default function UserPicture({person}) {
     return (
         <Dropdown placement="bottom-end" className={"bg-purple-950 shadow-2xl"}>
@@ -20,7 +22,8 @@ export default function UserPicture({person}) {
                     <p className="font-semibold">Signed in as</p>
                     <p className="font-semibold">zoey@example.com</p>
                 </DropdownItem>
-                <DropdownItem key="settings">My Settings</DropdownItem>
+                <DropdownItem key="settings">
+                    <Link href={"/profile"}>My Settings</Link></DropdownItem>
                 <DropdownItem key={"notifications"}>Notifications</DropdownItem>
                 <DropdownItem key="logout" color="danger">
                     Log Out
