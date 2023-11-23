@@ -15,7 +15,7 @@ export default function Header() {
             </NavbarBrand>
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem isActive>
-                    <Link href="#" aria-current="page">
+                    <Link href="/classes/cs61b" aria-current="page">
                         CS61B
                     </Link>
                 </NavbarItem>
