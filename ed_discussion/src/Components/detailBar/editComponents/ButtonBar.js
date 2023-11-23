@@ -1,7 +1,9 @@
+
 import React from "react";
 import { Button } from "@nextui-org/react";
 import Message from "@/Components/homeComponents/NextuiIcons/message";
 import Question from "@/Components/homeComponents/NextuiIcons/question";
+
 
 export default function ButtonBar(){
     return (
@@ -14,6 +16,8 @@ export default function ButtonBar(){
                 <Message/>
                 帖子
             </Button>
+           
+
         </div>
     );
 }
