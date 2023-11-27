@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.local" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/add-pet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/create-pets-table/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/homeComponents/newButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/homeComponents/newButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/newPage/textBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/newPage/textBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/cs61b/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/cs61b/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/courses/new/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/new/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;profile&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -55,6 +56,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/api" />
       <recent name="$PROJECT_DIR$/src/app/courses" />
     </key>
   </component>
@@ -71,7 +73,10 @@
       <workItem from="1701071223207" duration="1000" />
       <workItem from="1701071517219" duration="899000" />
       <workItem from="1701073009048" duration="3000" />
-      <workItem from="1701073203861" duration="1520000" />
+      <workItem from="1701073203861" duration="8598000" />
+      <workItem from="1701081929801" duration="259000" />
+      <workItem from="1701082363584" duration="86000" />
+      <workItem from="1701082526687" duration="1471000" />
     </task>
     <servers />
   </component>

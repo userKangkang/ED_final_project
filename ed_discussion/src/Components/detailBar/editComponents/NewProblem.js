@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Navbar, Link, NavbarItem, NavbarContent } from "@nextui-org/react";
+import {Navbar, Link, NavbarItem, NavbarContent, Button} from "@nextui-org/react";
 
 
 export default function NewProblem() {
@@ -8,7 +8,7 @@ export default function NewProblem() {
         <Navbar>
             <NavbarContent justify="start" self="center">
                 <NavbarItem >
-                    <Link href="/">取消</Link>
+                    <Link hre="/">取消</Link>
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify="center" self="center">
@@ -18,7 +18,7 @@ export default function NewProblem() {
             </NavbarContent>
             <NavbarContent justify="end" self="center">
                 <NavbarItem>
-                    <Link href="#">发帖</Link>
+                    <Button type={"submit"}>发帖</Button>
                 </NavbarItem>
             </NavbarContent>
         </Navbar>

@@ -9,7 +9,7 @@ import Text from '@tiptap/extension-text'
 import { EditorContent, useEditor } from '@tiptap/react'
 import React, { useCallback } from 'react'
 import {Card, CardHeader, CardBody, Button, Chip, Textarea} from "@nextui-org/react";
-export default function TextBox() {
+export default function TextBox({edito="he"}) {
     const editor = useEditor({
         extensions: [Document, Paragraph, Text, Image, Dropcursor],
         autofocus: true,
