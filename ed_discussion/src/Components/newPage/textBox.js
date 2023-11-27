@@ -29,6 +29,10 @@ export default function TextBox() {
         return null
     }
 
+    function handleSubmit() {
+        console.log(editor.getJSON().content);
+    }
+
     return (
         <div className={"flex justify-center mt-5"}>
             <Card className={"py-4 w-full m-3"}>
@@ -41,8 +45,9 @@ export default function TextBox() {
                         />
                     </Button>
                 </CardHeader>
-                <CardBody className={"overflow-visible py-2"}>
+                <CardBody className={"overflow-visible py-2 flex flex-col"}>
                   <EditorContent editor={editor} />
+                    <Button onClick={handleSubmit}>Get Content</Button>
                 </CardBody>
             </Card>
         </div>
