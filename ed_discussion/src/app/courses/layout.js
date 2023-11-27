@@ -2,8 +2,20 @@ import Header from "@/Components/homeComponents/Navbar";
 import NewButton from "@/Components/homeComponents/newButton";
 import Classes from "@/Components/homeComponents/Classes";
 import LeftBar from "@/Components/homeComponents/LeftBar";
+import { sql } from "@vercel/postgres";
+import { NextResponse } from "next/server";
 
-export default function Layout({children}) {
+async function getData() {
+    const data = await sql`SELECT * FROM Pets;`;
+    console.log(data.rows);
+    console.log(data);
+    return data;
+}
+
+export default async function Layout({children}) {
+
+    const data = await getData();
+
     return (
         <>
             <Header/>
@@ -14,7 +26,9 @@ export default function Layout({children}) {
                     <NewButton/>
                     <Classes />
                     <LeftBar />
-                    {/* <PersonalSideBar/> */}
+                    <table className={"w-full h-full text-white"}>
+                        <div>{data.rows[0].name}</div>
+                    </table>
                 </div>
                 {/* 开始制作的时候将下面的两个div注释掉，替代为PersonalSet */}
                 {/* 制作完成后请恢复原样，即取消div的注释，给PersonalSet加注释 */}
