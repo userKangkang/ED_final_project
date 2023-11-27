@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <Providers>
           <main className={"dark text-foreground bg-background"}>
-            <Header/>
               {children}
           </main>
       </Providers>
