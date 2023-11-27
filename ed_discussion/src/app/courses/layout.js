@@ -2,10 +2,6 @@ import Header from "@/Components/homeComponents/Navbar";
 import NewButton from "@/Components/homeComponents/newButton";
 import Classes from "@/Components/homeComponents/Classes";
 import LeftBar from "@/Components/homeComponents/LeftBar";
-import SearchBox from "@/Components/homeComponents/searchBox";
-import TopMessages from "@/Components/homeComponents/topMessage";
-import HistoryMessages from "@/Components/homeComponents/historyMessage";
-import RootMode from "@/Components/detailBar/rootMode";
 
 export default function Layout({children}) {
     return (
@@ -22,9 +18,7 @@ export default function Layout({children}) {
                 </div>
                 {/* 开始制作的时候将下面的两个div注释掉，替代为PersonalSet */}
                 {/* 制作完成后请恢复原样，即取消div的注释，给PersonalSet加注释 */}
-                <div className={"w-96 border-solid border-r-2 border-gray-400 h-screen overflow-y-scroll"}>
                     {children}
-                </div>
             </main>
         </>
     )
