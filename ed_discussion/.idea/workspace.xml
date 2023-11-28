@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/courses/cs61b/[id]/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/detailBar/editComponents/SwitchType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/detailBar/editComponents/SwitchType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/detailBar/editComponents/TitleBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/detailBar/editComponents/TitleBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/newPage/textBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/newPage/textBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/add-pet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/add-pet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/cs61b/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/cs61b/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/new/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/new/Actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/new/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/new/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/profile/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/page.js" afterDir="false" />
-    </list>
+    <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +74,7 @@
       <workItem from="1701098113934" duration="1045000" />
       <workItem from="1701099243111" duration="2084000" />
       <workItem from="1701102294928" duration="1062000" />
+      <workItem from="1701103564816" duration="4616000" />
     </task>
     <servers />
   </component>

@@ -6,8 +6,12 @@ import LeftBar from "@/Components/homeComponents/LeftBar";
 import {sql} from "@vercel/postgres";
 
 export const dynamicParams = false;
+<<<<<<< HEAD
 export const topData = await sql`SELECT * FROM TopMessage order by date DESC;`;
 console.log(topData);
+=======
+
+>>>>>>> c06bc64568502b17dbe76bacee19b47f42e804f7
 export default function Layout({children}) {
 
     return (
