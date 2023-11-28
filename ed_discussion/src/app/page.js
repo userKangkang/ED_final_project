@@ -1,6 +1,6 @@
 import Header from "@/Components/homeComponents/Navbar"
 import {Button, Link} from "@nextui-org/react";
-import {POST} from "@/app/api/add-pet";
+import {POST} from "@/app/api/add-table";
 import {sql} from "@vercel/postgres";
 import getTopDataIds from "@/app/api/routes/topMessage";
 

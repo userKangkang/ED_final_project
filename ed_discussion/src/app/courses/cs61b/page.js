@@ -7,7 +7,6 @@ import {getTopDataLinks} from "@/app/api/routes/topMessage";
 
 export default async function Cs61b() {
     const topData = await getTopDataLinks();
-    //TODO: remove the next line
     const DATA1 = topData.map((row) => ({
         id: row.id,
         title: row.title,
