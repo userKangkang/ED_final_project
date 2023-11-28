@@ -6,7 +6,7 @@ import LeftBar from "@/Components/homeComponents/LeftBar";
 import {sql} from "@vercel/postgres";
 
 export const dynamicParams = false;
-export const topData = await sql`SELECT * FROM TopMessage;`;
+export const topData = await sql`SELECT * FROM TopMessage order by date DESC;`;
 console.log(topData);
 export default function Layout({children}) {
 
@@ -21,7 +21,7 @@ export default function Layout({children}) {
                     <Classes />
                     <LeftBar />
                     <table className={"w-full h-full text-white"}>
-                        <div>{data.rows[0].name}</div>
+                        {/* <div>{data.rows[0].name}</div> */}
                     </table>
                 </div>
                 {/* 开始制作的时候将下面的两个div注释掉，替代为PersonalSet */}
