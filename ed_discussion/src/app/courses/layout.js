@@ -2,19 +2,13 @@ import Header from "@/Components/homeComponents/Navbar";
 import NewButton from "@/Components/homeComponents/newButton";
 import Classes from "@/Components/homeComponents/Classes";
 import LeftBar from "@/Components/homeComponents/LeftBar";
-import { sql } from "@vercel/postgres";
-import { NextResponse } from "next/server";
 
-async function getData() {
-    const data = await sql`SELECT * FROM Pets;`;
-    console.log(data.rows);
-    console.log(data);
-    return data;
-}
+import {sql} from "@vercel/postgres";
 
-export default async function Layout({children}) {
-
-    const data = await getData();
+export const dynamicParams = false;
+export const topData = await sql`SELECT * FROM TopMessage;`;
+console.log(topData);
+export default function Layout({children}) {
 
     return (
         <>
