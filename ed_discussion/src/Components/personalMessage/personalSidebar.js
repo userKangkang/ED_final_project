@@ -1,24 +1,48 @@
 "use client";
 import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react";
+import Image from "@nextui-org/image";
 
 export default function PersonalSideBar() {
   const items = [
     {
-      key: "new",
-      label: "New file",
+      key: "人图像",
+      label: "账户",
+      url:"/bx-user.svg",
     },
     {
-      key: "copy",
-      label: "Copy link",
+      key: "bell",
+      label: "通知",
+      url: "/bell.svg"
+    },
+    { key: "画板",
+      label: "外观",
+      url: "/bx-palette.svg"
     },
     {
-      key: "edit",
-      label: "Edit file",
+      key: "global",
+      label: "语言和地区",
+      url: "/bx-world.svg"
     },
     {
-      key: "delete",
-      label: "Delete file",
+      key: "合并账户",
+      label: "合并账户",
+      url: "/bx-transfer-alt.svg"
+    },
+    {
+     key: "💗",
+     label: "告诉朋友",
+     url: "bx-heart.svg"
+    },
+    {
+      key: "hat",
+      label: "我的课程",
+      url: "/hat.svg"
+    },
+    {
+     key: "聊天框",
+     label: "我的论坛",
+     url: "/bx-chat.svg"
     }
   ];
 
@@ -33,7 +57,7 @@ export default function PersonalSideBar() {
             key={item.key}
             color={item.key === "delete" ? "danger" : "default"}
             className={item.key === "delete" ? "text-danger" : ""}
-          >
+          > <Image src={item.url} width={20} height={20}/>
             {item.label}
           </ListboxItem>
         )}
