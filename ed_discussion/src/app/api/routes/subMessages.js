@@ -1,5 +1,6 @@
 'use server'
 import {unstable_noStore as noStore} from "next/cache";
+import {sql} from "@vercel/postgres";
 
 /**
  *  Find the comments of the page using pageId
@@ -11,11 +12,12 @@ import {unstable_noStore as noStore} from "next/cache";
  * @param pageId
  * @returns an array of submessages
  */
-export default function getComments(pageId) {
+export async function getComments(pageId) {
     noStore();
     try {
         //TODO: Find the submessages of the page using pageId
-
+        const result = await sql`SELECT * FROM CommentItem WHERE pageId = ${pageId};`;
+        return result;
     } catch (error) {
         console.log(error);
     }

@@ -1,40 +1,28 @@
 import {sql} from "@vercel/postgres";
-import { getTopDataContent } from "@/app/api/routes/topMessage";
-import { placeTopMessageContent } from "./placeMessageContent";
+import { placeTopMessageContent } from "../placeMessageContent";
 import { Image } from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
-import {getComments} from "@/app/api/routes/subMessages";
+import SubmitForm from "./submitForm";
 
 export async function generateDynamicParams() {
     const datas = await sql`SELECT id FROM TopMessage order by date DESC;`;
     console.log(datas);
     return datas.rows.map((row) => ({
-                id: row.id,
+                id: row.id+"/newComment",
         })
     )
 }
 
-export default async function Cs61bQuestions({params}) {
+export default async function cs61bComments({params}) {
     const {id} = params;
     const idData = await placeTopMessageContent(id);
     let Text = "";
     idData.content.forEach((para) => {
         Text += para.content[0].text;
      });
-
-    const comments = await getComments(id);
-    console.log(comments);
-    const commentsDatas = comments.rows.map((row) => (
-        <ul>
-            <li>{row.usr}</li>
-            <li>{row.detailedtime.toLocaleString()}</li>
-            <li>{row.context}</li>
-        </ul>
-    ));
-
     return (
-        <div>
+        <div className="w-full">
             <h1>{idData.title}</h1>
             <div className="flex flex-row w-full">
                 <div className="flex-start flex flex-row">
@@ -53,8 +41,10 @@ export default async function Cs61bQuestions({params}) {
                 <div className="text-white">
                 {Text}
                 </div>
-                <Button href={"/courses/cs61b/"+id+"/newComment"} as={Link} className="text-white">评论</Button>
-                {commentsDatas}
+                
+                <Button href={"/courses/cs61b/"+id} as={Link} className="text-white">返回</Button>
+                
+                <SubmitForm id={id}/>
             </div>
         </div>
     )
