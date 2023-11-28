@@ -7,7 +7,7 @@ import {sql} from "@vercel/postgres";
  * This is used for dynamic route to generate the expected pages
  * @returns {Promise<QueryResultRow[]>}
  */
-export default async function getTopDataIds() {
+export async function getTopDataIds() {
     noStore()
     try {
         const result = await sql`SELECT id FROM TopMessage order by date DESC;`;
@@ -42,6 +42,9 @@ export async function getTopDataLinks() {
 export async function getTopDataContent(id) {
     try {
         //TODO: get the content of the data needed for the top message to display by the id of the page
+        const result = await sql`SELECT * FROM TopMessage WHERE id = ${id};`;
+        // console.log(result.rows[0]);
+        return result.rows[0];
 
     } catch (error) {
         console.log(error);

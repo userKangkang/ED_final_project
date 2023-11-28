@@ -1,7 +1,8 @@
+'use server'
 import {unstable_noStore as noStore} from "next/cache";
 
 /**
- *  Find the submessages of the page using pageId
+ *  Find the comments of the page using pageId
  *  Note: Jingfeng's thought about the structure of the submessages:
  *  id | pageId | usr | content | date
  *  id is the primary key
@@ -10,7 +11,7 @@ import {unstable_noStore as noStore} from "next/cache";
  * @param pageId
  * @returns an array of submessages
  */
-export default function getSubMessages(pageId) {
+export default function getComments(pageId) {
     noStore();
     try {
         //TODO: Find the submessages of the page using pageId

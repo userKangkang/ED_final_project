@@ -9,5 +9,6 @@ export default async function postQuestion(title, type, editor) {
     const id = Date.now();
     await sql`INSERT INTO TopMessage (id, usr, title, type, content, date) VALUES (${id}, ${usr}, ${title}, ${type}, ${editor}, ${date});`;
     revalidatePath("/courses");
+    revalidatePath(`/courses/cs61a/${id}`);
     redirect("/courses/cs61b");
 }

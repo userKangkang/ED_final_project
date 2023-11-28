@@ -11,9 +11,13 @@
  *   structure useful
  * @returns {Promise<void>}
  */
-export async function placeTopMessageContent() {
+import { getTopDataContent } from "@/app/api/routes/topMessage";
+export async function placeTopMessageContent(id) {
     //TODO: place the Top message content to the page
-
+    console.log('id:\n'+id);
+    const idData = await getTopDataContent(id);
+    console.log(idData.content[0].content[0].text);
+    return idData;
 }
 
 /**
