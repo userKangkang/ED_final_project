@@ -2,7 +2,7 @@ import React from "react";
 import { Chip } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 
-export default function SwitchType({questionType="General"}) {
+export default function SwitchType({questionType}) {
   return (
     <div className="flex flex-row w-full">
         <div className="flex items-center text-xm w-1/12 p-2">类别</div>
