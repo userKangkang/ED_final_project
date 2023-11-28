@@ -5,8 +5,7 @@ import LeftBar from "@/Components/homeComponents/LeftBar";
 import {sql} from "@vercel/postgres";
 
 export const dynamicParams = false;
-export const topData = await sql`SELECT * FROM TopMessage;`;
-console.log(topData);
+
 export default function Layout({children}) {
     return (
         <>
