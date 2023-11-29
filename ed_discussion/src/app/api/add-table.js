@@ -22,6 +22,6 @@ export async function POST() {
 
 export async function ids() {
     const ids = await sql`SELECT id FROM TopMessage;`;
-    console.log(ids);
+    // console.log(ids);
 }
 

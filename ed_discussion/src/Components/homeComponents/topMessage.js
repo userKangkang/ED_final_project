@@ -3,10 +3,9 @@ import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react";
 import Info from "./NextuiIcons/info";
 import Message from "./NextuiIcons/message";
+import { Link } from "@nextui-org/react";
 
 export default function TopMessages(props) {
-    
-    
 
     const messageList = props.datas.map(data => {
         const icon = function () {
@@ -16,8 +15,10 @@ export default function TopMessages(props) {
                 return <Info/>;
             }
         };
+        const url = `/courses/cs61b/${data.id.toString()}`;
+        // console.log(url);
         return(
-            <ListboxItem key={data.id} className={"max-w-full"}>
+            <ListboxItem key={data.id} className={"max-w-full text-white"} href={url} as={Link}>
                 <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
                 <div className="flex my-1 flex-row items-center text-sm">
                     {icon()}
@@ -37,10 +38,10 @@ export default function TopMessages(props) {
         <>
           <div className={"w-full h-5 bg-gray-400"}></div>
           <div className="w-full">
+            
             <Listbox aria-label="Actions"
-            onAction={(key) => alert(key)}
             className="w-full max-w-full">
-                {messageList}
+                    {messageList}
             </Listbox>
             </div>
           {/* <div className={"my-0 mx-auto text-xs flex justify-center bg-white"}>更多</div> */}
