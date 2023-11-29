@@ -1,4 +1,3 @@
-import {sql} from "@vercel/postgres";
 import getTopDataIds from "@/app/api/routes/topMessage";
 
 /**
