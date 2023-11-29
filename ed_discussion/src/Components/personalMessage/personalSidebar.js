@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import {Listbox, ListboxItem} from "@nextui-org/react";
-import Image from "@nextui-org/image";
+import Image from "next/image";
 
 export default function PersonalSideBar() {
   const items = [
