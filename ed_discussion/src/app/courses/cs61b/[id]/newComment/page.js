@@ -5,15 +5,6 @@ import { Link } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import SubmitForm from "./submitForm";
 
-export async function generateDynamicParams() {
-    const datas = await sql`SELECT id FROM TopMessage order by date DESC;`;
-    console.log(datas);
-    return datas.rows.map((row) => ({
-                id: row.id+"/newComment",
-        })
-    )
-}
-
 export default async function cs61bComments({params}) {
     const {id} = params;
     const idData = await placeTopMessageContent(id);

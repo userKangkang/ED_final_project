@@ -4,11 +4,12 @@ import { Image } from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
+import {getTopDataIds} from "@/app/api/routes/topMessage";
 
 export async function generateDynamicParams() {
-    const datas = await sql`SELECT id FROM TopMessage order by date DESC;`;
+    const datas = await getTopDataIds();
     console.log(datas);
-    return datas.rows.map((row) => ({
+    return datas.map((row) => ({
                 id: row.id,
         })
     )
@@ -17,15 +18,21 @@ export async function generateDynamicParams() {
 export default async function Cs61bQuestions({params}) {
     const {id} = params;
     const idData = await placeTopMessageContent(id);
-    let Text = "";
-    idData.content.forEach((para) => {
-        Text += para.content[0].text;
-     });
+    console.log(idData);
+    const eachTopMessageLine = idData.forEach((row) => {
+        if (row.type === 'image') {
+            // eslint-disable-next-line react/jsx-key
+            return <Image src={row.attrs.src} className={"w-full"}/>
+        } else {
+            // eslint-disable-next-line react/jsx-key
+            return <p>{row.content.text}</p>
+        }
+    })
 
     const comments = await getComments(id);
     console.log(comments);
     const commentsDatas = comments.rows.map((row) => (
-        <ul>
+        <ul key={row.id}>
             <li>{row.usr}</li>
             <li>{row.detailedtime.toLocaleString()}</li>
             <li>{row.context}</li>
@@ -50,7 +57,7 @@ export default async function Cs61bQuestions({params}) {
             </div>
             <div className="w-full">
                 <div className="text-white">
-                {Text}
+                    <ul>{eachTopMessageLine}</ul>
                 </div>
                 <Button href={"/courses/cs61b/"+id+"/newComment"} as={Link} className="text-white">评论</Button>
                 {commentsDatas}
