@@ -60,7 +60,7 @@ export default async function Cs61bQuestions({params}) {
                 <div className="text-white">
                     <ul>{eachTopMessageLine}</ul>
                 </div>
-                <Button href={"/courses/cs61b/"+id+"/newComment"} as={Link} className="text-white">评论</Button>
+                
                 {commentsDatas}
             </div>
             <SubmitForm id={id}/>
