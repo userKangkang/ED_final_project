@@ -9,24 +9,14 @@ import TopMessages from "@/Components/homeComponents/topMessage";
 import HistoryMessages from "@/Components/homeComponents/historyMessage";
 
 import {sql} from "@vercel/postgres";
+import MiddleLinks from "@/app/courses/middlelinks";
 
 export const dynamicParams = false;
 
 export const topData = await sql`SELECT * FROM TopMessage order by date DESC;`;
 // console.log(topData);
 
-export default async function Layout({children}) {
-
-    const topData = await getTopDataLinks();
-    const DATA1 = topData.map((row) => ({
-        id: row.id,
-        title: row.title,
-        isQuestion: true,
-        type: row.type,
-        color: "red-500",
-        author: row.usr,
-        date: new Date(row.date).toLocaleDateString(),
-    }))
+export default function Layout({children}) {
 
     return (
         <>
@@ -44,8 +34,7 @@ export default async function Layout({children}) {
                 </div>
                 <div className={"w-96 border-solid border-r-2 border-gray-400 h-screen overflow-y-scroll"}>
                     <SearchBox/>
-                    <TopMessages datas={DATA1}/>
-                    <HistoryMessages datas={DATA2}/>
+                    <MiddleLinks />
                 </div>
                 {/* 开始制作的时候将下面的两个div注释掉，替代为PersonalSet */}
                 {/* 制作完成后请恢复原样，即取消div的注释，给PersonalSet加注释 */}

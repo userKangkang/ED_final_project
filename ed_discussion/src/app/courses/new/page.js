@@ -13,11 +13,9 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Image from "@tiptap/extension-image";
 import Dropcursor from "@tiptap/extension-dropcursor";
-import {getTopDataLinks} from '@/app/api/routes/topMessage';
 
 
 export default function NewThemePage({params}) {
-    getTopDataLinks();
     const [questionType, setQuestionType] = useState("General");
     const [title, setTitle] = useState("");
     const editor = useEditor({

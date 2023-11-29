@@ -1,16 +1,19 @@
 "use client"
 import './styles.scss'
-import "@uploadthing/react/styles.css";
 
+import Document from '@tiptap/extension-document'
+import Dropcursor from '@tiptap/extension-dropcursor'
+import Paragraph from '@tiptap/extension-paragraph'
+import Image from '@tiptap/extension-image'
+import Text from '@tiptap/extension-text'
 import { EditorContent, useEditor } from '@tiptap/react'
-import React, { useState, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import {Card, CardHeader, CardBody, Button, Chip, Textarea} from "@nextui-org/react";
-import { UploadButton } from "../homeComponents/Uploadthing";
-import Image from "next/image";
 export default function TextBox({editor, handleSubmit}) {
-    const [imageUrl, setImageUrl] = useState("");
-    const addImage = useCallback((imageUrl) => {
-        const url = imageUrl;
+
+
+    const addImage = useCallback(() => {
+        const url = window.prompt('URL')
 
         if (url) {
             editor.chain().focus().setImage({src: url}).run()
@@ -27,10 +30,7 @@ export default function TextBox({editor, handleSubmit}) {
             <Card className={"py-4 w-full m-3"}>
                 <CardHeader className="pb-0 pt-0 px-4 flex-row justify-between">
                     <Chip color={"default"}>Paragraph</Chip>
-
-                    <Button isIconOnly={true} size={"sm"} color={"secondary"} onClick={() => {
-                        addImage("/SJTU.png");
-                    }}>
+                    <Button isIconOnly={true} size={"sm"} color={"secondary"} onClick={addImage}>
                         <img
                             src={"/image.svg"}
                             alt={"add image"}
