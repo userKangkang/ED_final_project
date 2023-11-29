@@ -5,6 +5,7 @@ import { Link } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
+import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
 
 export async function generateDynamicParams() {
     const datas = await getTopDataIds();
@@ -22,10 +23,10 @@ export default async function Cs61bQuestions({params}) {
     const eachTopMessageLine = idData.content.map((row) => {
         if (row.type === 'image') {
             // eslint-disable-next-line react/jsx-key
-            return <Image src={row.attrs.src} className={"w-full"}/>
+            return <li><Image src={row.attrs.src} className={"w-full"}/></li>
         } else {
             // eslint-disable-next-line react/jsx-key
-            return <p>{row.content.text}</p>
+            return <li><p>{row.content[0].text}</p></li>
         }
     })
 
@@ -62,6 +63,7 @@ export default async function Cs61bQuestions({params}) {
                 <Button href={"/courses/cs61b/"+id+"/newComment"} as={Link} className="text-white">评论</Button>
                 {commentsDatas}
             </div>
+            <SubmitForm id={id}/>
         </div>
     )
 }
