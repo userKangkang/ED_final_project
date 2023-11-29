@@ -1,11 +1,6 @@
 "use client"
 import './styles.scss'
 
-import Document from '@tiptap/extension-document'
-import Dropcursor from '@tiptap/extension-dropcursor'
-import Paragraph from '@tiptap/extension-paragraph'
-import Image from '@tiptap/extension-image'
-import Text from '@tiptap/extension-text'
 import { EditorContent, useEditor } from '@tiptap/react'
 import React, { useCallback, useRef } from 'react'
 import {Card, CardHeader, CardBody, Button, Chip, Textarea} from "@nextui-org/react";

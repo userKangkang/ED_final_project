@@ -9,7 +9,6 @@ import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
 
 export async function generateDynamicParams() {
     const datas = await getTopDataIds();
-    console.log(datas);
     return datas.map((row) => ({
                 id: row.id,
         })
@@ -19,7 +18,6 @@ export async function generateDynamicParams() {
 export default async function Cs61bQuestions({params}) {
     const {id} = params;
     const idData = await placeTopMessageContent(id);
-    console.log(idData);
     const eachTopMessageLine = idData.content.map((row) => {
         if (row.type === 'image') {
             // eslint-disable-next-line react/jsx-key
@@ -31,7 +29,6 @@ export default async function Cs61bQuestions({params}) {
     })
 
     const comments = await getComments(id);
-    console.log(comments);
     const commentsDatas = comments.rows.map((row) => (
         <ul key={row.id}>
             <li>{row.usr}</li>
