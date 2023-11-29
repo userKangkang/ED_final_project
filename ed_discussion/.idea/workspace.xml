@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/cs61b/[id]/newComment/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/cs61b/[id]/newComment/submitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/cs61b/[id]/submitForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/cs61b/[id]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/cs61b/[id]/page.js" afterDir="false" />
-    </list>
+    <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +48,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/courses/cs61b/[id]" />
       <recent name="$PROJECT_DIR$/src/app/api" />
       <recent name="$PROJECT_DIR$/src/app/courses" />
     </key>
