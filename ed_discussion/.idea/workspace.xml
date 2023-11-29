@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/api/uploadthing/core.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/uploadthing/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/uploadthing/uploadbutton.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/newPage/textBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/newPage/textBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-    </list>
+    <list default="true" id="53ae095b-460b-45f1-86f8-6ee4510b68ac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
