@@ -6,8 +6,17 @@ import Message from "./NextuiIcons/message";
 import { Link } from "@nextui-org/react";
 
 export default function TopMessages(props) {
+    const query = props.searchParams;
 
-    const messageList = props.datas.map(data => {
+    const datas = props.datas.filter(data => {
+        if (query.get("query")?.toString() && !(data.title.includes(query.get("query")?.toString()))) {
+            return false;
+        } else {
+            return true;
+        }
+    });
+
+    const messageList = datas.map(data => {
         const icon = function () {
             if(data.isQuestion) {
                 return <Message/>;
@@ -16,7 +25,7 @@ export default function TopMessages(props) {
             }
         };
         const url = `/courses/cs61b/${data.id.toString()}`;
-        // console.log(url);
+
         return(
             <ListboxItem key={data.id} className={"max-w-full text-white"} href={url} as={Link}>
                 <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>

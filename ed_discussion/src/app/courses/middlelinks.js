@@ -1,7 +1,7 @@
 "use server"
 import {getTopDataLinks} from "@/app/api/routes/topMessage";
 import {topData} from "@/app/courses/layout";
-import TopMessages from "@/Components/homeComponents/topMessage";
+import NewMiddleLinks from "./newMiddleLinks";
 
 export default async function MiddleLinks() {
     const topData = await getTopDataLinks();
@@ -14,5 +14,5 @@ export default async function MiddleLinks() {
         author: row.usr,
         date: new Date(row.date).toLocaleDateString(),
     }))
-    return <TopMessages datas={DATA1}/>
+    return <NewMiddleLinks datas={DATA1}/>
 }
