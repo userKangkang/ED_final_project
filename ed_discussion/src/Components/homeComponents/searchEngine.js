@@ -1,8 +1,9 @@
 "use client"
 import { React, useState } from "react";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useSearchParams, usePathname, useRouter, redirect } from "next/navigation";
 import Search from "./NextuiIcons/search";
 import {Input} from "@nextui-org/react";
+// import { redirect } from "next/navigation";
 
 
 export default function SearchEngine() {
@@ -21,6 +22,9 @@ export default function SearchEngine() {
             const params = new URLSearchParams(searchParams);
             params.set("query", searchQuery);
             replace(`${pathname}?${params.toString()}`);
+        } else if (event.key === 'Enter') {
+            console.log(event.key + pathname);
+            replace(pathname);
         }
     }
 
@@ -56,7 +60,7 @@ export default function SearchEngine() {
                 }
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
-                defaultValue={searchParams.get("query")?.toString()}
+                
             />
 
     );
