@@ -19,7 +19,7 @@ export default async function Cs61bQuestions({params}) {
     const {id} = params;
     const idData = await placeTopMessageContent(id);
     console.log(idData);
-    const eachTopMessageLine = idData.forEach((row) => {
+    const eachTopMessageLine = idData.content.map((row) => {
         if (row.type === 'image') {
             // eslint-disable-next-line react/jsx-key
             return <Image src={row.attrs.src} className={"w-full"}/>
