@@ -4,7 +4,7 @@ import {Image, Avatar} from "@nextui-org/react";
 export default function PersonalSet() {
   return (
     <div className = "flex flex-wrap flex-col">
-      <h1 className="text-5xl px-8">简介</h1>
+      <h1 className="mt-4 text-5xl px-8">简介</h1>
       <div className= "flex justify-self-start ">
         <Image src="/Yukinoshita.jpeg" className={"rounded-full mt-6 mb-6 mr-10 ml-10"} width={200} height={200} />
         <div className = "flex flex-col ml-24 justify-center">
