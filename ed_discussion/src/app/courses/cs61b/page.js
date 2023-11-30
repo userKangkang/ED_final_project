@@ -4,7 +4,7 @@ export default async function Cs61b() {
 
     return (
         <>
-            <div className={"w-7/12 border-solid border-gray-400 min-h-screen"}>
+            <div className={"w-11/12 border-solid border-gray-400 min-h-screen"}>
                 <RootMode />
             </div>
         </>

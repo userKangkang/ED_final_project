@@ -1,5 +1,5 @@
 import React from "react";
-import {Image, Avatar} from "@nextui-org/react";
+import {Image, Avatar, Divider} from "@nextui-org/react";
 
 export default function PersonalSet() {
   return (

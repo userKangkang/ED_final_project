@@ -1,6 +1,6 @@
 import {sql} from "@vercel/postgres";
 import { placeTopMessageContent } from "./placeMessageContent";
-import { Image } from "@nextui-org/react";
+import {Image, User} from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
@@ -21,7 +21,7 @@ export default async function Cs61bQuestions({params}) {
     const eachTopMessageLine = idData.content.map((row) => {
         if (row.type === 'image') {
             // eslint-disable-next-line react/jsx-key
-            return <li><Image src={row.attrs.src} className={"px-4 py-3"}/></li>
+            return <li><Image src={row.attrs.src} alt={"image"} className={"px-4 py-3"}/></li>
         } else {
             // eslint-disable-next-line react/jsx-key
             return <li><p className="px-2 font-mono text-2xl">{row.content[0].text}</p></li>
@@ -30,29 +30,39 @@ export default async function Cs61bQuestions({params}) {
 
     const comments = await getComments(id);
     const commentsDatas = comments.rows.map((row) => (
+
         <ul key={row.id}>
-            <li>{row.usr}</li>
+            <li>
+                <User
+                key={row.id}
+                name={row.usr}
+                description={"staff"}
+                avatarProps={{
+                    src: "/Yukinoshita.jpeg",
+                    name: row.usr,
+                }}
+            />
+            </li>
             <li>{row.detailedtime.toLocaleString()}</li>
             <li>{row.context}</li>
         </ul>
     ));
 
     return (
-        <div>
+        <div className={"w-full"}>
             <div className="flex flex-col text-violet-300">
                 <h1 className="px-2 py-3 bg-violet-100">{idData.title}</h1>
                 </div>
             <div className="flex flex-row px-2">
                 <div className="flex-start flex flex-row">
-                    <Image src="/SJTU.png" width={40} height={40}/>
-                    <div className="flex flex-col">
-                        <div className="text-500-red">{idData.usr}</div>
-                        <div className="text-500-gray">{idData.date.toLocaleDateString()}</div>
-                    </div>
-                </div>
-                <div className="flex-end flex flex-row">
-                    <div className="text-500-gray">2 stars</div>
-                    <div className="text-500-gray">2 likes</div>
+                    <User
+                        name={idData.usr}
+                        description="staff"
+                        avatarProps={{
+                            src: "/Yukinoshita.jpeg",
+                            name: idData.usr,
+                        }}
+                    />
                 </div>
             </div>
             <div className="px-2">
