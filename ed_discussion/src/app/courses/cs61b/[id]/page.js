@@ -21,10 +21,10 @@ export default async function Cs61bQuestions({params}) {
     const eachTopMessageLine = idData.content.map((row) => {
         if (row.type === 'image') {
             // eslint-disable-next-line react/jsx-key
-            return <li><Image src={row.attrs.src} className={"w-full"}/></li>
+            return <li><Image src={row.attrs.src} className={"px-4 py-3"}/></li>
         } else {
             // eslint-disable-next-line react/jsx-key
-            return <li><p>{row.content[0].text}</p></li>
+            return <li><p className="px-2 font-mono text-2xl">{row.content[0].text}</p></li>
         }
     })
 
@@ -40,7 +40,7 @@ export default async function Cs61bQuestions({params}) {
     return (
         <div>
             <h1>{idData.title}</h1>
-            <div className="flex flex-row w-full">
+            <div className="flex flex-row px-2">
                 <div className="flex-start flex flex-row">
                     <Image src="/SJTU.png" width={40} height={40}/>
                     <div className="flex flex-col">
@@ -53,7 +53,7 @@ export default async function Cs61bQuestions({params}) {
                     <div className="text-500-gray">2 likes</div>
                 </div>
             </div>
-            <div className="w-full">
+            <div className="px-2">
                 <div className="text-white">
                     <ul>{eachTopMessageLine}</ul>
                 </div>
