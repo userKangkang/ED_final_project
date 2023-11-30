@@ -8,16 +8,21 @@ import { useRef } from "react";
 export default function SubmitForm(props) {
     const texteareRef = useRef();
     return(
-        <form action={() => {
+        <form className="px-8" action={() => {
+            if(texteareRef.current.value === "") {
+                return;
+            }
             postComment(props.id, texteareRef.current.value);
         }}>
             <Textarea ref={texteareRef}
                label="Description"
                placeholder="Enter your description"
-               className="w-full"
+               className="py-4 w-full"
                id="comment-textarea"
            />
-           <Button type={"submit"}>发表评论</Button>
+           <div className="flex flex-row-reverse">
+                <Button type={"submit"} >发表评论</Button>
+              </div>
         </form>
     );
 }

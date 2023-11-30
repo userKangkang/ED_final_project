@@ -5,7 +5,8 @@ import {redirect} from "next/navigation";
 
 export default async function postQuestion(title, type, editor) {
     const usr = "Jingfeng Robot";
-    const date = new Date().toJSON().slice(0, 10);
+    const now = new Date();
+    const date = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(0, 10) + " " + new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(11, 19);
     const id = Date.now();
     await sql`INSERT INTO TopMessage (id, usr, title, type, content, date) VALUES (${id}, ${usr}, ${title}, ${type}, ${editor}, ${date});`;
     revalidatePath("/courses");
