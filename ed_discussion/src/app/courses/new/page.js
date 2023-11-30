@@ -13,6 +13,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Image from "@tiptap/extension-image";
 import Dropcursor from "@tiptap/extension-dropcursor";
+import NewProblem from "@/Components/detailBar/editComponents/NewProblem";
 
 
 export default function NewThemePage({params}) {
@@ -20,6 +21,11 @@ export default function NewThemePage({params}) {
     const [title, setTitle] = useState("");
     const editor = useEditor({
         extensions: [Document, Paragraph, Text, Image, Dropcursor],
+        editorProps: {
+            attributes: {
+                class: "w-full h-72 overflow-y-scroll border-solid border-gray-300 rounded-lg prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
+            },
+        },
         autofocus: true,
         editable: true,
         injectCSS: false,
@@ -30,30 +36,12 @@ export default function NewThemePage({params}) {
     }
     return (
         <>
-      <main className={"flex max-h-screen flex-row items-start p-0 min-w-screen bg-gradient-to-r from-[#0D001A] to-[#180828]"}>
-
-        <div className={"w-11/12 border-solid border-gray-400 min-h-screen"}>
+        <div className={"w-11/12 border-solid border-gray-400 min-h-screen bg-gray-400"}>
            <form action={() => {
                postQuestion(title, questionType, JSON.stringify(editor.getJSON().content));
            }}>
                <div className="w-full h-full flex flex-col items-center justify-center">
-                   <Navbar>
-                       <NavbarContent justify="start" self="center">
-                           <NavbarItem >
-                               <Link hre="/">取消</Link>
-                           </NavbarItem>
-                       </NavbarContent>
-                       <NavbarContent justify="center" self="center">
-                           <NavbarItem >
-                               <div>新问题</div>
-                           </NavbarItem>
-                       </NavbarContent>
-                       <NavbarContent justify="end" self="center">
-                           <NavbarItem>
-                               <Button type={"submit"}>发帖</Button>
-                           </NavbarItem>
-                       </NavbarContent>
-                   </Navbar>
+                   <NewProblem />
                    <div className="w-full h-full flex flex-col items-center justify-center px-3">
                        <TitleBar setTitle={setTitle}/>
                        <ButtonBar/>
@@ -63,7 +51,6 @@ export default function NewThemePage({params}) {
                <TextBox editor={editor} handleSubmit={handleSubmit}/>
            </form>
         </div>
-      </main>
     </>
     );
 }

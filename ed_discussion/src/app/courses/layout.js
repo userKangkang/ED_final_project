@@ -38,7 +38,7 @@ export default function Layout({children}) {
                 </div>
                 {/* 开始制作的时候将下面的两个div注释掉，替代为PersonalSet */}
                 {/* 制作完成后请恢复原样，即取消div的注释，给PersonalSet加注释 */}
-                <div className={"w-7/12 border-solid border-gray-400 h-screen overflow-y-scroll"}>
+                <div className={"w-full border-solid border-gray-400 h-screen overflow-y-scroll flex justify-center"}>
                     {children}
                 </div>
                     

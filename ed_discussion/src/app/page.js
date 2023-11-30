@@ -1,8 +1,5 @@
 import Header from "@/Components/homeComponents/Navbar"
-import {Button, Link} from "@nextui-org/react";
-import {POST} from "@/app/api/add-table";
-import {sql} from "@vercel/postgres";
-import getTopDataIds from "@/app/api/routes/topMessage";
+import { Link } from "@nextui-org/react";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function HomePage() {

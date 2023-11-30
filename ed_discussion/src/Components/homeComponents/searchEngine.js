@@ -60,8 +60,6 @@ export default function SearchEngine() {
                 }
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
-                
             />
-
     );
 }

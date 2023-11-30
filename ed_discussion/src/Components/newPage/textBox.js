@@ -41,8 +41,8 @@ export default function TextBox({editor, handleSubmit}) {
                     />
                 </CardHeader>
                 <CardBody className={"overflow-visible py-2 flex flex-col"}>
-                  <EditorContent editor={editor} />
-                    <Button onClick={handleSubmit}>Get Content</Button>
+                        <EditorContent className={"border-2 border-gray-400 rounded-lg"} editor={editor} />
+                    <Button type={"submit"} className={"mt-3"}>Submit</Button>
                 </CardBody>
             </Card>
         </div>
