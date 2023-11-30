@@ -39,7 +39,9 @@ export default async function Cs61bQuestions({params}) {
 
     return (
         <div>
-            <h1>{idData.title}</h1>
+            <div className="flex flex-col text-violet-300">
+                <h1 className="px-2 py-3 bg-violet-100">{idData.title}</h1>
+                </div>
             <div className="flex flex-row px-2">
                 <div className="flex-start flex flex-row">
                     <Image src="/SJTU.png" width={40} height={40}/>
