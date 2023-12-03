@@ -36,7 +36,7 @@ export default function NewThemePage({params}) {
     }
     return (
         <>
-        <div className={"w-11/12 border-solid border-gray-400 min-h-screen bg-gray-400"}>
+        <div className={"w-11/12 border-solid border-gray-400 min-h-screen"}>
            <form action={() => {
                postQuestion(title, questionType, JSON.stringify(editor.getJSON().content));
            }}>
