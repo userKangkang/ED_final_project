@@ -48,8 +48,8 @@ export default async function Cs61bQuestions({params}) {
 
     return (
         <div className={"w-full"}>
-            <div className="flex flex-col text-violet-300 text-4xl">
-                <h1 className="px-2 py-3 bg-violet-100">{idData.title}</h1>
+            <div className="ml-8 flex flex-col text-4xl text-amber-400">
+                <h1 className="px-2 py-3">{idData.title}</h1>
             </div>
             <Card>
                 <CardHeader className="flex flex-row justify-between">
