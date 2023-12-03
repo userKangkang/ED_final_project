@@ -31,7 +31,7 @@ export default async function Cs61bQuestions({params}) {
     const comments = await getComments(id);
     const commentsDatas = comments.rows.map((row) => (
 
-        <ul key={row.id}>
+        <ul key={row.id} className={"m-2"}>
             <li>
                 <User
                 key={row.id}
@@ -50,9 +50,9 @@ export default async function Cs61bQuestions({params}) {
 
     return (
         <div className={"w-full"}>
-            <div className="flex flex-col text-violet-300">
+            <div className="flex flex-col text-violet-300 text-4xl mb-3">
                 <h1 className="px-2 py-3 bg-violet-100">{idData.title}</h1>
-                </div>
+            </div>
             <div className="flex flex-row px-2">
                 <div className="flex-start flex flex-row">
                     <User
