@@ -30,11 +30,11 @@ export default function PersonalSideBar() {
     //   label: "合并账户",
     //   url: "/bx-transfer-alt.svg"
     // },
-    {
-     key: "💗",
-     label: "告诉朋友",
-     url: "bx-heart.svg"
-    },
+    // {
+    //  key: "heart",
+    //  label: "告诉朋友",
+    //  url: "heart.svg"
+    // },
     // {
     //   key: "hat",
     //   label: "我的课程",
@@ -46,24 +46,26 @@ export default function PersonalSideBar() {
     //  url: "/bx-chat.svg"
     // }
   ];
-
+    const listBoxItems = items.map((item) => (
+            <ListboxItem
+                as={Link}
+                href={item.key === "人图像" ? "/profile" : item.key === "heart" ? "/profile/share" : "/profile/appearance"}
+                key={item.key}
+                color={"default"}
+                className={"light:text-white dark:text-white"}
+            >
+                <Image src={item.url} alt={"icon"} width={20} height={20}/>
+                {item.label}
+            </ListboxItem>
+    )
+    );
   return (
     <div className="w-full max-w-[260px] border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100">
       <Listbox
         items={items}
         aria-label="Dynamic Actions"
       >
-        {(item) => (
-          <ListboxItem
-            as={Link}
-            href={item.key === "人图像" ? "/profile" : item.key === "💗" ? "/profile/share" : "/profile/appearance"}
-            key={item.key}
-            color={"default"}
-            className={"text-white"}
-          > <Image src={item.url} width={20} height={20}/>
-            {item.label}
-          </ListboxItem>
-        )}
+            {listBoxItems}
       </Listbox>
     </div>
       
