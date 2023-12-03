@@ -16,8 +16,6 @@ export default function ButtonBar(){
                 <Message/>
                 帖子
             </Button>
-           
-
         </div>
     );
 }
