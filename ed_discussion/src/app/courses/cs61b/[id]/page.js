@@ -1,8 +1,5 @@
-import {sql} from "@vercel/postgres";
 import { placeTopMessageContent } from "./placeMessageContent";
-import {Image, User} from "@nextui-org/react";
-import { Link } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
+import {Image, User, Card, CardBody, CardHeader} from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
 import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
@@ -51,26 +48,29 @@ export default async function Cs61bQuestions({params}) {
 
     return (
         <div className={"w-full"}>
-            <div className="flex flex-col text-violet-300 text-4xl mb-3">
-                <h1 className="px-2 py-3 bg-violet-100">{idData.title}</h1>
+            <div className="ml-8 flex flex-col text-4xl text-amber-400">
+                <h1 className="px-2 py-3">{idData.title}</h1>
             </div>
-            <div className="flex flex-row px-2">
-                <div className="flex-start flex flex-row">
-                    <User
-                        name={idData.usr}
-                        description="staff"
-                        avatarProps={{
-                            src: "/Yukinoshita.jpeg",
-                            name: idData.usr,
-                        }}
-                    />
-                </div>
-            </div>
+            <Card>
+                <CardHeader className="flex flex-row justify-between">
+                        <User
+                            name={idData.usr}
+                            description="staff"
+                            avatarProps={{
+                                src: "/Yukinoshita.jpeg",
+                                name: idData.usr,
+                            }}
+                        />
+                        <p className="px-2 py-3">{idData.posttime.toLocaleString()}</p>
+                </CardHeader>
+                <CardBody>
+                    <div className="dark:text-white">
+                        <ul>{eachTopMessageLine}</ul>
+                    </div>
+                </CardBody>
+            </Card>
+
             <div className="px-2">
-                <div className="text-white">
-                    <ul>{eachTopMessageLine}</ul>
-                </div>
-                
                 {commentsDatas}
             </div>
             <SubmitForm id={id}/>

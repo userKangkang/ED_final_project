@@ -27,11 +27,11 @@ export default function TopMessages(props) {
         const url = `/courses/cs61b/${data.id.toString()}`;
 
         return(
-                <ListboxItem key={data.id} className={"max-w-full dark:text-white border-b-1.5"} href={url} as={Link}>
+                <ListboxItem key={data.id} className={"max-w-full border-b-1.5"} href={url} as={Link}>
                     <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
                         <div className="flex my-1 flex-row items-center text-sm">
                             {icon()}
-                            <span className={"truncate ml-3 text-sm"}>{data.title}</span>
+                            <span className={"truncate ml-3 text-sm text-black"}>{data.title}</span>
                         </div>
                         <div className="flex flex-row items-center text-xs text-gray-600">
                             <span className={`text-${data.color} font-semibold mr-2`}>{data.type}</span>
