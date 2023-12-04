@@ -3,6 +3,9 @@ import {Image, User, Card, CardBody, CardHeader} from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
 import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
+import { auth } from "@/auth"
+import getUser from "@/app/api/getuser";
+import { getAllUser } from "@/app/api/getuser";
 
 export async function generateDynamicParams() {
     const datas = await getTopDataIds();
@@ -12,7 +15,46 @@ export async function generateDynamicParams() {
     )
 }
 
+export async function getCommentData(rows)
+{
+    const allUsr = await getAllUser();
+    const UsrAvaMap = allUsr.map((usr) => (
+        {name: usr.username, avatar: usr.avatar}
+    ));
+    const getAvatar = UsrAvaMap.reduce((map, obj) => {
+        map[obj.name] = obj.avatar;
+        return map;
+    }, {});
+    return(
+        <>
+        {rows.map((row) => {  
+        return(
+        <ul key={row.id} className={"m-2"}>
+            <li>
+                <User
+                key={row.id}
+                name={row.usr}
+                description={"staff"}
+                avatarProps={{
+                    src: getAvatar[row.usr],
+                    name: row.usr,
+                }}
+            />
+            </li>
+            <li>{row.detailedtime.toLocaleString()}</li>
+            <li>{row.context}</li>
+        </ul>)
+        })}
+        </>
+    )
+    
+}
+
 export default async function Cs61bQuestions({params}) {
+    const {user} = await auth();
+    const {email} = user;
+    
+    const userData = await getUser(email);
     const {id} = params;
     const idData = await placeTopMessageContent(id);
     const eachTopMessageLine = idData.content.map((row) => {
@@ -26,24 +68,11 @@ export default async function Cs61bQuestions({params}) {
     })
 
     const comments = await getComments(id);
-    const commentsDatas = comments.rows.map((row) => (
+    
 
-        <ul key={row.id} className={"m-2"}>
-            <li>
-                <User
-                key={row.id}
-                name={row.usr}
-                description={"staff"}
-                avatarProps={{
-                    src: "/Yukinoshita.jpeg",
-                    name: row.usr,
-                }}
-            />
-            </li>
-            <li>{row.detailedtime.toLocaleString()}</li>
-            <li>{row.context}</li>
-        </ul>
-    ));
+
+    const commentsDatas = await getCommentData(comments.rows);
+
 
 
     return (
@@ -57,7 +86,7 @@ export default async function Cs61bQuestions({params}) {
                             name={idData.usr}
                             description="staff"
                             avatarProps={{
-                                src: "/Yukinoshita.jpeg",
+                                src: userData.avatar,
                                 name: idData.usr,
                             }}
                         />

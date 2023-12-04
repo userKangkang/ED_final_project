@@ -11,3 +11,13 @@ export default async function getUser(email) {
         throw new Error('Failed to fetch user.');
     }
 }
+
+export async function getAllUser() {
+    try {
+        const user = await sql`SELECT * FROM usrs`;
+        return user.rows;
+    } catch (error) {
+        console.error('Failed to fetch user:', error);
+        throw new Error('Failed to fetch user.');
+    }
+}

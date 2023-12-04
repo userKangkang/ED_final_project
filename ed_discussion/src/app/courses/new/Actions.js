@@ -2,9 +2,14 @@
 import {sql} from "@vercel/postgres";
 import {revalidatePath} from "next/cache";
 import {redirect} from "next/navigation";
+import { auth } from "@/auth";
+import getUser from "@/app/api/getuser";
 
 export default async function postQuestion(title, type, editor) {
-    const usr = "Jingfeng Robot";
+    const {user} = await auth();
+    const {email} = user;
+    const userData = await getUser(email);
+    const usr = userData.username;
     const now = new Date();
     const date = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(0, 10) + " " + new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(11, 19);
     const id = Date.now();
@@ -14,7 +19,10 @@ export default async function postQuestion(title, type, editor) {
 }
 
 export async function postComment(id, editor) {
-    const usr = "Jingfeng Robot";
+    const {user} = await auth();
+    const {email} = user;
+    const userData = await getUser(email);
+    const usr = userData.username;
     const now = new Date();
     const date = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(0, 10) + " " + new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(11, 19);
     const commentId = Date.now();
