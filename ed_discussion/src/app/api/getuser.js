@@ -1,4 +1,6 @@
 import {sql} from "@vercel/postgres";
+import {auth} from "@/auth";
+import {unstable_noStore} from "next/cache";
 
 export default async function getUser(email) {
     try {

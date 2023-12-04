@@ -4,7 +4,6 @@ import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
 import bcrypt from 'bcryptjs-react'
 import getUser from "@/app/api/getuser";
-import {redirect} from "next/navigation";
 
 export const { auth, signIn, signOut } = NextAuth({
     ...authConfig,
@@ -18,11 +17,13 @@ export const { auth, signIn, signOut } = NextAuth({
                     const { email, password } = parsedCredentials.data;
                     const user = await getUser(email);
                     if (!user) return null;
-                    const passwordsMatch = true;
+                    const passwordsMatch = password === user.pass;
+                    console.log(passwordsMatch);
                     if (passwordsMatch) {
                         return user;
                     }
                 }
+                console.log("Invalid credentials");
                 return null;
             },
         }),

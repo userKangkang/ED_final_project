@@ -3,8 +3,14 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 import UserPicture from "@/Components/homeComponents/UserPicture";
 import HomeIcon from "@/Components/homeComponents/HomeIcon";
 import Hat from "@/Components/homeComponents/Hat";
+import { auth } from "@/auth"
+import getUser from "@/app/api/getuser";
 
-export default function Header() {
+export default async function Header() {
+    const {user} = await auth();
+    const {email} = user;
+    const userData = await getUser(email);
+
     return (
         <Navbar isBordered isBlurred={true} position={"static"} className={"font-serif bg-gradient-to-r from-[#9353D3] to-[#06B7DB] dark:from-[#481878] dark:to-[#301050]"}>
             <NavbarBrand>
@@ -26,7 +32,7 @@ export default function Header() {
                 </NavbarItem>
                 <NavbarItem>
                     {/* TODO: personal information */}
-                    <UserPicture person={null} />
+                    <UserPicture person={userData} />
                 </NavbarItem>
             </NavbarContent>
         </Navbar>
