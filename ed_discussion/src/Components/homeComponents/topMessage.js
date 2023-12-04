@@ -8,11 +8,21 @@ import { Link } from "@nextui-org/react";
 export default function TopMessages(props) {
     const query = props.searchParams;
 
-    const datas = props.datas.filter(data => {
+    const Qdatas = props.datas.filter(data => {
         if (query.get("query")?.toString() && !(data.title.includes(query.get("query")?.toString()))) {
             return false;
         } else {
             return true;
+        }
+    });
+
+    const datas = Qdatas.filter(data => {
+        if(query.get("type")?.toString() === "All" || !query.get("type")) {
+            return true;
+        } else if (data.type === query.get("type")?.toString()) {
+            return true;
+        } else {
+            return false;
         }
     });
 

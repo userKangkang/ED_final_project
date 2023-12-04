@@ -1,7 +1,7 @@
 "use server"
 import {getTopDataLinks} from "@/app/api/routes/topMessage";
 import {topData} from "@/app/courses/layout";
-import NewMiddleLinks from "./newMiddleLinks";
+import NewMiddleLinks from "@/app/courses/newMiddleLinks";
 
 export default async function MiddleLinks() {
     const topData = await getTopDataLinks();
@@ -13,6 +13,6 @@ export default async function MiddleLinks() {
         color: "red-500",
         author: row.usr,
         date: new Date(row.posttime).toLocaleTimeString(),
-    }))
+    }));
     return <NewMiddleLinks datas={DATA1}/>
 }
