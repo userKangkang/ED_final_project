@@ -8,15 +8,11 @@ import SearchBox from "@/Components/homeComponents/searchBox";
 import TopMessages from "@/Components/homeComponents/topMessage";
 import HistoryMessages from "@/Components/homeComponents/historyMessage";
 
-import {sql} from "@vercel/postgres";
 import MiddleLinks from "@/app/courses/middlelinks";
 
-export const dynamicParams = false;
-
-export const topData = await sql`SELECT * FROM ThemeMessage order by posttime DESC;`;
-// console.log(topData);
 
 export default function Layout({children}) {
+
 
     return (
         <>
