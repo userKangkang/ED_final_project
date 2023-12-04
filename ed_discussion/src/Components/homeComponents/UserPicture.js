@@ -2,6 +2,7 @@
 import React from "react";
 import {DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
+import logOut from "@/app/api/routes/logout";
 
 export default function UserPicture({person}) {
     return (
@@ -27,7 +28,11 @@ export default function UserPicture({person}) {
                 </DropdownItem>
                 <DropdownItem key={"notifications"}>Notifications</DropdownItem>
                 <DropdownItem key="logout" color="danger">
-                    Log Out
+                    <form action={logOut} >
+                        <button type="submit" className="w-full h-full">
+                            Log out
+                        </button>
+                    </form>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>
