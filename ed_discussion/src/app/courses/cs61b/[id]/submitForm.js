@@ -19,10 +19,10 @@ export default function SubmitForm(props) {
             texteareRef.current.value = "";
         }}>
             <Textarea ref={texteareRef}
-               label="Description"
+               label="Description" variant={"bordered"}
                placeholder="Enter your description"
                className="py-4 w-full"
-               id="comment-textarea"
+               id="comment-textarea" wrap={"hard"}
                value={content}
                onChange={(e) => setContent(e.target.value)}
            />
