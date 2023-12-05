@@ -19,10 +19,10 @@ export async function getCommentData(rows)
 {
     const allUsr = await getAllUser();
     const UsrAvaMap = allUsr.map((usr) => (
-        {name: usr.username, avatar: usr.avatar}
+        {email: usr.email, avatar: usr.avatar}
     ));
     const getAvatar = UsrAvaMap.reduce((map, obj) => {
-        map[obj.name] = obj.avatar;
+        map[obj.email] = obj.avatar;
         return map;
     }, {});
     return(
@@ -36,7 +36,7 @@ export async function getCommentData(rows)
                 name={row.usr}
                 description={"staff"}
                 avatarProps={{
-                    src: getAvatar[row.usr],
+                    src: getAvatar[row.email],
                     name: row.usr,
                 }}
             />
@@ -57,6 +57,16 @@ export default async function Cs61bQuestions({params}) {
     const userData = await getUser(email);
     const {id} = params;
     const idData = await placeTopMessageContent(id);
+    
+    const allUsr = await getAllUser();
+    const UsrAvaMap = allUsr.map((usr) => (
+        {email: usr.email, avatar: usr.avatar}
+    ));
+    const getAvatar = UsrAvaMap.reduce((map, obj) => {
+        map[obj.email] = obj.avatar;
+        return map;
+    }, {});
+
     const eachTopMessageLine = idData.content.map((row) => {
         if (row.type === 'image') {
             // eslint-disable-next-line react/jsx-key
@@ -86,7 +96,7 @@ export default async function Cs61bQuestions({params}) {
                             name={idData.usr}
                             description="staff"
                             avatarProps={{
-                                src: userData.avatar,
+                                src: getAvatar[idData.email],
                                 name: idData.usr,
                             }}
                         />
