@@ -3,7 +3,7 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 import UserPicture from "@/Components/homeComponents/UserPicture";
 import HomeIcon from "@/Components/homeComponents/HomeIcon";
 import Hat from "@/Components/homeComponents/Hat";
-import { auth } from "@/auth"
+import { auth } from "@/auth";
 import getUser from "@/app/api/getuser";
 
 export default async function Header() {
