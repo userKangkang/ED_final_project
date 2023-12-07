@@ -21,7 +21,7 @@ export async function POST() {
 }
 
 export async function ids() {
-    const ids = await sql`SELECT Tid FROM ThemeMessage;`;
+    const ids = await sql`SELECT id FROM TopMessage;`;
     // console.log(ids);
 }
 

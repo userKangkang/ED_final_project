@@ -1,11 +1,13 @@
+import {sql} from "@vercel/postgres";
 import { placeTopMessageContent } from "./placeMessageContent";
-import {Image, User, Card, CardBody, CardHeader} from "@nextui-org/react";
+import {Image, User} from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
 import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
-import { auth } from "@/auth"
-import getUser from "@/app/api/getuser";
-import { getAllUser } from "@/app/api/getuser";
+import React from "react";
+import { Card, CardHeader, CardBody, CardFooter, Divider} from "@nextui-org/react";
 
 export async function generateDynamicParams() {
     const datas = await getTopDataIds();
@@ -110,6 +112,9 @@ export default async function Cs61bQuestions({params}) {
             </Card>
 
             <div className="px-2">
+                <div className="text-White ">
+                    <ul>{eachTopMessageLine}</ul>
+                </div>
                 {commentsDatas}
             </div>
             <SubmitForm id={id}/>

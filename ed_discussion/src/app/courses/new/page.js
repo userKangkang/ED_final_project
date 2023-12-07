@@ -3,8 +3,6 @@ import TextBox from "@/Components/newPage/textBox";
 import postQuestion from "@/app/courses/new/Actions";
 import {Button, Input, Link, Navbar, NavbarContent, NavbarItem} from "@nextui-org/react";
 import React from "react";
-import Message from "@/Components/homeComponents/NextuiIcons/message";
-import Question from "@/Components/homeComponents/NextuiIcons/question";
 import {useState} from "react";
 import ButtonBar from "@/Components/detailBar/editComponents/ButtonBar";
 import TitleBar from "@/Components/detailBar/editComponents/TitleBar";
@@ -20,7 +18,6 @@ import NewProblem from "@/Components/detailBar/editComponents/NewProblem";
 
 export default function NewThemePage({params}) {
     const [questionType, setQuestionType] = useState("General");
-    const [question, setQuestion] = useState(true);
     const [title, setTitle] = useState("");
     const editor = useEditor({
         extensions: [Document, Paragraph, Text, Image, Dropcursor],
@@ -39,28 +36,19 @@ export default function NewThemePage({params}) {
     }
     return (
         <>
-        <div className={"w-11/12 border-solid border-gray-400 min-h-screen"}>
+        <div className={"w-11/12 border-solid border-gray-400 min-h-screen bg-gray-400"}>
            <form action={() => {
                postQuestion(title, questionType, JSON.stringify(editor.getJSON().content));
            }}>
                <div className="w-full h-full flex flex-col items-center justify-center">
-                   <NewProblem question={question}/>
+                   <NewProblem />
                    <div className="w-full h-full flex flex-col items-center justify-center px-3">
                        <TitleBar setTitle={setTitle}/>
-                       <div className="my-1 py-1 px-2 w-full flex flex-row justify-center items-center">
-                         <Button variant="flat" color="secondary" className="w-6/12 mr-2" onClick={() => {setQuestion(true);}}>
-                            <Question/>
-                              问题
-                        </Button>
-                        <Button variant="flat" color="primary" className="w-6/12" onClick={() => {setQuestion(false);}}>
-                            <Message/>
-                              帖子
-                        </Button>
-                    </div>
+                       <ButtonBar/>
                        <SwitchType questionType={setQuestionType}/>
                    </div>
                </div>
-               <TextBox editor={editor} handleSubmit={handleSubmit} type={questionType}/>
+               <TextBox editor={editor} handleSubmit={handleSubmit}/>
            </form>
         </div>
     </>

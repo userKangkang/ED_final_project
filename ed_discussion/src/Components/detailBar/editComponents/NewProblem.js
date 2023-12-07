@@ -3,17 +3,17 @@ import React from "react";
 import {Navbar, Link, NavbarItem, NavbarContent, Button} from "@nextui-org/react";
 
 
-export default function NewProblem(props) {
+export default function NewProblem() {
     return (
         <Navbar>
             <NavbarContent justify="start" self="center">
                 <NavbarItem >
-                    <Button as={Link} href="/courses/cs61b">取消</Button>
+                    <Link hre="/">取消</Link>
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify="center" self="center">
                 <NavbarItem >
-                    <div>新{props.question ? "问题" : "帖子"}</div>
+                    <div>新问题</div>
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify="end" self="center">

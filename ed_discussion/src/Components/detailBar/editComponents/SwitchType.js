@@ -7,20 +7,23 @@ export default function SwitchType({questionType}) {
     <div className="flex flex-row w-full">
         <div className="flex items-center text-xm w-1/12 p-2">类别</div>
         <div className="flex flex-row flex-wrap justify-around w-11/12 items-center">
-        <Button variant="light" className="h-8 w-26 p-0" onClick={() => {questionType("General")}}>
+        <Button variant="light" className="h-8 w-26 p-0">
             <Chip variant="bordered" color="primary" className="w-full">General</Chip>
         </Button>
-        <Button variant="light" className="h-8 w-26 p-0" onClick={() => {questionType("Lectures")}}>
+        <Button variant="light" className="h-8 w-26 p-0">
             <Chip variant="bordered" color="secondary">Lectures</Chip>
         </Button>
-        <Button variant="light" className="h-8 w-26 p-0" onClick={() => {questionType("Vitamins")}}>
-            <Chip variant="bordered" color="success">Vitamins</Chip>
+        <Button variant="light" className="h-8 w-26 p-0">
+            <Chip variant="bordered" color="success">Sections</Chip>
         </Button>
-        <Button variant="light" className="h-8 w-26 p-0" onClick={() => {questionType("Projects")}}>
-            <Chip variant="bordered" color="warning">Projects</Chip>
+        <Button variant="light" className="h-8 w-26 p-0">
+            <Chip variant="bordered" color="warning">Problem Sets</Chip>
         </Button>
-        <Button variant="light" className="h-8 w-26 p-0" onClick={() => {questionType("Social")}}>
-            <Chip variant="bordered" color="danger">Social</Chip>
+        <Button variant="light" className="h-8 w-26 p-0">
+            <Chip variant="bordered" color="danger">Assignment</Chip>
+        </Button>
+        <Button variant="light" className="h-7 w-8 p-0">
+            <Chip variant="bordered" color="default">Social</Chip>
         </Button>
         </div>
         
