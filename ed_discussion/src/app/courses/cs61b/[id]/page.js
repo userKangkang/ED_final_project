@@ -42,7 +42,7 @@ export async function getCommentData(rows)
             />
             </li>
             <li>{row.detailedtime.toLocaleString()}</li>
-            <li>{row.context}</li>
+            <li><p className={"break-words"}>{row.context}</p></li>
         </ul>)
         })}
         </>
@@ -86,7 +86,7 @@ export default async function Cs61bQuestions({params}) {
 
 
     return (
-        <div className={"w-full"}>
+        <div className={"w-full p-2"}>
             <div className="ml-8 flex flex-col text-4xl text-amber-400 font-serif">
                 <h1 className="px-2 py-3">{idData.title}</h1>
             </div>
