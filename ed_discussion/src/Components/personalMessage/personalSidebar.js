@@ -49,7 +49,7 @@ export default function PersonalSideBar() {
     const listBoxItems = items.map((item) => (
             <ListboxItem
                 as={Link}
-                href={item.key === "人图像" ? "/profile" : item.key === "heart" ? "/profile/share" : "/profile/appearance"}
+                href={item.key === "人图像" ? "/courses/profile" : item.key === "heart" ? "/courses/profile/share" : "/courses/profile/appearance"}
                 key={item.key}
                 color={"default"}
                 className={"light:text-white dark:text-white"}
