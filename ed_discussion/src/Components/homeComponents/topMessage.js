@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import {Divider, Listbox, ListboxItem} from "@nextui-org/react";
+import {Listbox, ListboxItem} from "@nextui-org/react";
 import Info from "./NextuiIcons/info";
 import Message from "./NextuiIcons/message";
 import { Link } from "@nextui-org/react";
@@ -8,21 +8,11 @@ import { Link } from "@nextui-org/react";
 export default function TopMessages(props) {
     const query = props.searchParams;
 
-    const Qdatas = props.datas.filter(data => {
+    const datas = props.datas.filter(data => {
         if (query.get("query")?.toString() && !(data.title.includes(query.get("query")?.toString()))) {
             return false;
         } else {
             return true;
-        }
-    });
-
-    const datas = Qdatas.filter(data => {
-        if(query.get("type")?.toString() === "All" || !query.get("type")) {
-            return true;
-        } else if (data.type === query.get("type")?.toString()) {
-            return true;
-        } else {
-            return false;
         }
     });
 
@@ -37,19 +27,19 @@ export default function TopMessages(props) {
         const url = `/courses/cs61b/${data.id.toString()}`;
 
         return(
-                <ListboxItem key={data.id} className={"max-w-full border-b-1.5"} href={url} as={Link}>
-                    <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
-                        <div className="flex my-1 flex-row items-center text-sm">
-                            {icon()}
-                            <span className={"truncate ml-3 text-sm text-black"}>{data.title}</span>
-                        </div>
-                        <div className="flex flex-row items-center text-xs text-gray-600">
-                            <span className={`text-${data.color} font-semibold mr-2`}>{data.type}</span>
-                            <span className={"mr-2"}>{data.author}</span>
-                            <span className={""}>{data.date}</span>
-                        </div>
-                    </div>
-                </ListboxItem>
+            <ListboxItem key={data.id} className={"max-w-full text-white"} href={url} as={Link}>
+                <div className="px-3 flex flex-col w-full h-16 justify-center" key={data.id}>
+                <div className="flex my-1 flex-row items-center text-sm">
+                    {icon()}
+                    <span className={"truncate ml-3 text-sm"}>{data.title}</span>
+                </div>
+                <div className="flex flex-row items-center text-xs text-gray-600">
+                    <span className={`text-${data.color} font-semibold mr-2`}>{data.type}</span>
+                    <span className={"mr-2"}>{data.author}</span>
+                    <span className={""}>{data.date}</span>
+                </div>
+            </div>
+            </ListboxItem>
         );
     });
 

@@ -1,5 +1,8 @@
+import {sql} from "@vercel/postgres";
 import { placeTopMessageContent } from "./placeMessageContent";
-import {Image, User, Card, CardBody, CardHeader} from "@nextui-org/react";
+import {Image, User} from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
 import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
@@ -29,7 +32,6 @@ export default async function Cs61bQuestions({params}) {
 
     const comments = await getComments(id);
     const commentsDatas = comments.rows.map((row) => (
-<<<<<<< HEAD
         <Card className="max-w-[600px] bg-gray-600 mb-4">
             <CardHeader className="flex gap-3">
                 <div>
@@ -50,32 +52,12 @@ export default async function Cs61bQuestions({params}) {
                 <p>{row.context}</p>
             </CardBody>
         </Card>
-=======
-
-        <ul key={row.id} className={"m-2"}>
-            <li>
-                <User
-                key={row.id}
-                name={row.usr}
-                description={"staff"}
-                avatarProps={{
-                    src: "/Yukinoshita.jpeg",
-                    name: row.usr,
-                }}
-            />
-            </li>
-            <li>{row.detailedtime.toLocaleString()}</li>
-            <li>{row.context}</li>
-        </ul>
->>>>>>> main
     ));
     
 
 
-
     return (
         <div className={"w-full"}>
-<<<<<<< HEAD
             <div className="flex flex-col text-Blue-800 font-serif text-2xl" >
                 <h1 className="px-2 py-3 bg-gradient-to-r from-violet-400 to-bg-purple-600 opacity-2000">{idData.title}</h1>
                 </div>
@@ -90,37 +72,11 @@ export default async function Cs61bQuestions({params}) {
                         }}
                     />
                 </div>
-=======
-            <div className="ml-8 flex flex-col text-4xl text-amber-400">
-                <h1 className="px-2 py-3">{idData.title}</h1>
->>>>>>> main
             </div>
-            <Card>
-                <CardHeader className="flex flex-row justify-between">
-                        <User
-                            name={idData.usr}
-                            description="staff"
-                            avatarProps={{
-                                src: "/Yukinoshita.jpeg",
-                                name: idData.usr,
-                            }}
-                        />
-                        <p className="px-2 py-3">{idData.posttime.toLocaleString()}</p>
-                </CardHeader>
-                <CardBody>
-                    <div className="dark:text-white">
-                        <ul>{eachTopMessageLine}</ul>
-                    </div>
-                </CardBody>
-            </Card>
-
             <div className="px-2">
-<<<<<<< HEAD
                 <div className="text-White ">
                     <ul>{eachTopMessageLine}</ul>
                 </div>
-=======
->>>>>>> main
                 {commentsDatas}
             </div>
             <SubmitForm id={id}/>

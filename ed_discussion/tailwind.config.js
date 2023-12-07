@@ -9,12 +9,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
-        mono: ['Menlo', 'monospace'],
-        cosmic: ['Cosmic Sans', 'sans-serif'],
-      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

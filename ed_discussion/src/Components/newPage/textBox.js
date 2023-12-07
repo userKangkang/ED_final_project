@@ -5,7 +5,7 @@ import { EditorContent, useEditor } from '@tiptap/react'
 import React, { useCallback, useRef } from 'react'
 import {Card, CardHeader, CardBody, Button, Chip, Textarea} from "@nextui-org/react";
 import {UploadButton} from "@/app/api/uploadthing/uploadbutton"
-export default function TextBox({editor, handleSubmit, type}) {
+export default function TextBox({editor, handleSubmit}) {
     const imageUrl = useRef("");
     const addImage = useCallback(() => {
         console.log(imageUrl.current);
@@ -25,7 +25,7 @@ export default function TextBox({editor, handleSubmit, type}) {
         <div className={"flex justify-center mt-5"}>
             <Card className={"py-4 w-full m-3"}>
                 <CardHeader className="pb-0 pt-0 px-4 flex-row justify-between">
-                    <Chip color={"default"} size={"md"}>{type}</Chip>
+                    <Chip color={"default"} size={"md"}>Paragraph</Chip>
                     <UploadButton
                         endpoint="imageUploader"
                         onClientUploadComplete={(res) => {

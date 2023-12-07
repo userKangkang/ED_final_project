@@ -5,7 +5,7 @@ import { Link } from "@nextui-org/react";
 
 export default function UserPicture({person}) {
     return (
-        <Dropdown placement="bottom-end" className={"bg-blue-600 dark:bg-purple-950 shadow-2xl"}>
+        <Dropdown placement="bottom-end" className={"bg-purple-950 shadow-2xl"}>
             <DropdownTrigger>
                 <Avatar
                     isBordered
@@ -23,8 +23,7 @@ export default function UserPicture({person}) {
                     <p className="font-semibold">zoey@example.com</p>
                 </DropdownItem>
                 <DropdownItem key="settings">
-                    <Link href={"/profile"} className={"text-white"}>My Settings</Link>
-                </DropdownItem>
+                    <Link href={"/profile"}>My Settings</Link></DropdownItem>
                 <DropdownItem key={"notifications"}>Notifications</DropdownItem>
                 <DropdownItem key="logout" color="danger">
                     Log Out
