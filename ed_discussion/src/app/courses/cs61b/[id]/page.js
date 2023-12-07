@@ -86,8 +86,13 @@ export default async function Cs61bQuestions({params}) {
 
 
     return (
+<<<<<<< HEAD
         <div className={"w-full p-2"}>
             <div className="ml-8 flex flex-col text-4xl text-amber-400 font-serif">
+=======
+        <div className={"w-full relative"}>
+            <div className="ml-8 flex flex-col text-4xl text-amber-400">
+>>>>>>> main
                 <h1 className="px-2 py-3">{idData.title}</h1>
             </div>
             <Card>
