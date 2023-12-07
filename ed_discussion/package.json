@@ -21,7 +21,7 @@
     "@tiptap/starter-kit": "^2.1.12",
     "@uploadthing/react": "^6.0.2",
     "@vercel/postgres": "^0.5.1",
-    "bcryptjs-react": "^2.4.6",
+    "bcrypt": "^5.1.1",
     "big-integer": "^1.6.52",
     "framer-motion": "^10.16.5",
     "next": "^14.0.3",

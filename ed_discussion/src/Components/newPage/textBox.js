@@ -31,7 +31,6 @@ export default function TextBox({editor, handleSubmit, type}) {
                         onClientUploadComplete={(res) => {
                             // Do something with the response
                             imageUrl.current = res[0].url;
-                            console.log(res[0]);
                             addImage();
                         }}
                         onUploadError={(error) => {

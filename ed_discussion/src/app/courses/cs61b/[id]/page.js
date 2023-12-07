@@ -103,16 +103,17 @@ export default async function Cs61bQuestions({params}) {
                         <p className="px-2 py-3">{idData.posttime.toLocaleString()}</p>
                 </CardHeader>
                 <CardBody>
-                    <div className="dark:text-white">
+                    <div className="dark:text-white ">
                         <ul>{eachTopMessageLine}</ul>
                     </div>
                 </CardBody>
             </Card>
-
-            <div className="px-2">
-                {commentsDatas}
-            </div>
-            <SubmitForm id={id}/>
+                <div className="px-2 ">
+                    {commentsDatas}
+                </div>
+                <div className="fixed bottom-20 left-100 right-0">
+                    <SubmitForm id={id}/>
+                </div>
         </div>
     )
 }
