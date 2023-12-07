@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
       <Providers>
-          <main className={"light text-foreground bg-background"}>
+          <main className={"light text-foreground bg-background w-full"}>
               {children}
           </main>
       </Providers>
