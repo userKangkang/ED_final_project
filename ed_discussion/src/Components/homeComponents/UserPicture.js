@@ -24,7 +24,7 @@ export default function UserPicture({person}) {
                     <p className="font-semibold">{person.email}</p>
                 </DropdownItem>
                 <DropdownItem key="settings">
-                    <Link href={"/profile"} className={"text-white"}>My Settings</Link>
+                    <Link href={"/courses/profile"} className={"text-white"}>My Settings</Link>
                 </DropdownItem>
                 <DropdownItem key={"notifications"}>Notifications</DropdownItem>
                 <DropdownItem key="logout" color="danger">
