@@ -20,7 +20,7 @@ export default function SubmitForm(props) {
                className="py-4 w-full"
                id="comment-textarea"
            />
-           <div className="flex flex-row-reverse">
+           <div className="flex flex-row-reverse ">
                 <Button type={"submit"} >发表评论</Button>
               </div>
         </form>

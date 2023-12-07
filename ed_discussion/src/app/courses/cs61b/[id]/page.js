@@ -6,6 +6,8 @@ import { Button } from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
 import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
+import React from "react";
+import { Card, CardHeader, CardBody, CardFooter, Divider} from "@nextui-org/react";
 
 export async function generateDynamicParams() {
     const datas = await getTopDataIds();
@@ -30,28 +32,34 @@ export default async function Cs61bQuestions({params}) {
 
     const comments = await getComments(id);
     const commentsDatas = comments.rows.map((row) => (
-
-        <ul key={row.id}>
-            <li>
-                <User
-                key={row.id}
-                name={row.usr}
-                description={"staff"}
-                avatarProps={{
-                    src: "/Yukinoshita.jpeg",
-                    name: row.usr,
-                }}
-            />
-            </li>
-            <li>{row.detailedtime.toLocaleString()}</li>
-            <li>{row.context}</li>
-        </ul>
+        <Card className="max-w-[600px] bg-gray-600 mb-4">
+            <CardHeader className="flex gap-3">
+                <div>
+                    <Image
+                        height={40}
+                        round-full
+                        src="/Yukinoshita.jpeg"
+                        width={40}
+                    />
+                </div>
+                <div className="flex flex-col">
+                    <p className="text-md">name</p>
+                </div>
+            </CardHeader>
+            <Divider />
+            <CardBody>
+                <p>{row.detailedtime.toLocaleString()}</p>
+                <p>{row.context}</p>
+            </CardBody>
+        </Card>
     ));
+    
+
 
     return (
         <div className={"w-full"}>
-            <div className="flex flex-col text-violet-300">
-                <h1 className="px-2 py-3 bg-violet-100">{idData.title}</h1>
+            <div className="flex flex-col text-Blue-800 font-serif text-2xl" >
+                <h1 className="px-2 py-3 bg-gradient-to-r from-violet-400 to-bg-purple-600 opacity-2000">{idData.title}</h1>
                 </div>
             <div className="flex flex-row px-2">
                 <div className="flex-start flex flex-row">
@@ -66,10 +74,9 @@ export default async function Cs61bQuestions({params}) {
                 </div>
             </div>
             <div className="px-2">
-                <div className="text-white">
+                <div className="text-White ">
                     <ul>{eachTopMessageLine}</ul>
                 </div>
-                
                 {commentsDatas}
             </div>
             <SubmitForm id={id}/>
