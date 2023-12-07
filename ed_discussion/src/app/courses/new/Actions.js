@@ -30,3 +30,9 @@ export async function postComment(id, editor) {
     revalidatePath("/courses/cs61b/"+id);
     redirect("/courses/cs61b/"+id);
 }
+
+export async function modifyAvatar(url, email) {
+    await sql`UPDATE usrs SET avatar = ${url} WHERE email = ${email}`;
+    revalidatePath("/courses/profile");
+    redirect("/courses/profile");
+}

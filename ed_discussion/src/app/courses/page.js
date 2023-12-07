@@ -10,13 +10,13 @@ export default function HomePage() {
       <CardHeader className="flex gap-3">
         
         <div className="flex flex-col">
-          <p className="text-md">CS61B</p>
-          <p className="text-small text-default-500">Data Structures</p>
+          <p className="text-md">工程学导论</p>
+          <p className="text-small text-default-500">ME1221</p>
         </div>
       </CardHeader>
       <Divider/>
       <CardBody>
-        <p>Introducting fundamental data structures and algorithms.</p>
+        <p>项目式教学，通过提出问题并探索简单方案，达到让学生从被动接受知识到主动获取知识的目的。</p>
       </CardBody>
       <Divider/>
       <CardFooter>

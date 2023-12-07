@@ -8,6 +8,6 @@ export default function HomeIcon() {
         alt : "home icon",
     }
     return (
-        <Icon icon={homeIcon} source={"/courses/cs61b"}/>
+        <Icon icon={homeIcon} source={"/courses"}/>
     )
 }

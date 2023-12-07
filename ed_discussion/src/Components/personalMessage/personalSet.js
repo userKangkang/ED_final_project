@@ -1,8 +1,19 @@
 "use client"
 import React from "react";
 import {Image, Avatar, Divider} from "@nextui-org/react";
+import {UploadButton} from "@/app/api/uploadthing/uploadbutton"
+import { useCallback, useRef } from "react";
+import { modifyAvatar } from "@/app/courses/new/Actions";
 
-export default function PersonalSet({userData}) {
+export default function PersonalSet({userData, avatarUrl}) {
+  const imageUrl = useRef("");
+  const addImage = useCallback(() => {
+    console.log(imageUrl.current);
+    const url = imageUrl.current;
+
+    if (url) {
+    }
+  }, [imageUrl]);
   return (
     <div className = "font-cosmic flex flex-wrap flex-col">
       <h1 className="mt-4 text-5xl px-8">简介</h1>
@@ -21,7 +32,26 @@ export default function PersonalSet({userData}) {
           <span className = "px-8 py-4 rounded-md border-solid border-rose-500 ">主电子邮件</span>
         </div>
         <div>
-          <div className = "px-8 py-4">添加电子邮件地址</div>
+          <div className = "px-8 py-4">
+            
+              <UploadButton
+                type={"submit"}
+                endpoint="imageUploader"                    
+                onClientUploadComplete={(res) => {
+                // Do something with the response
+                imageUrl.current = res[0].url;
+                console.log(res[0]);
+                addImage();
+                modifyAvatar(imageUrl.current, userData.email);
+              }}
+                onUploadError={(error) => {
+                  // Do something with the error.
+                  alert(`ERROR! ${error.message}`);
+              }}
+              />
+            
+              
+          </div>
         </div>
       </div>
     </div>
