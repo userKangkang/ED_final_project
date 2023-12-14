@@ -41,7 +41,7 @@ export default function NewThemePage({params}) {
         <>
         <div className={"w-11/12 border-solid border-gray-400 min-h-screen"}>
            <form action={() => {
-               postQuestion(title, questionType, JSON.stringify(editor.getJSON().content));
+               postQuestion(title, questionType, JSON.stringify(editor.getJSON().content), question);
            }}>
                <div className="w-full h-full flex flex-col items-center justify-center">
                    <NewProblem question={question}/>

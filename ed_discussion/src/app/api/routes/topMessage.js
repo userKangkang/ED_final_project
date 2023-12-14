@@ -25,7 +25,8 @@ export async function getTopDataIds() {
 export async function getTopDataLinks() {
     noStore();
     try {
-        const result = await sql`SELECT tid, usr, title, type, posttime FROM ThemeMessage order by posttime DESC;`;
+        const result = await sql`SELECT tid, usr, title, type, posttime, isQuestion FROM ThemeMessage order by posttime DESC;`;
+        // console.log(result.rows);
         return result.rows;
     } catch (error) {
         console.log(error);

@@ -6,6 +6,6 @@ import { useSearchParams } from "next/navigation";
 export default function NewMiddleLinks(props) {
     const searchParams = useSearchParams();
     return(
-        <TopMessages datas={props.datas} searchParams={searchParams}/>
+        <TopMessages datas={props.datas} searchParams={searchParams} isquestion={props.isquestion}/>
     );
 }
