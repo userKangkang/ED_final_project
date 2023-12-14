@@ -26,7 +26,7 @@ export default function NewThemePage({params}) {
         extensions: [Document, Paragraph, Text, Image, Dropcursor],
         editorProps: {
             attributes: {
-                class: "w-full h-72 overflow-y-scroll border-solid border-gray-300 rounded-lg prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
+                class: "w-full h-72 border-solid border-gray-300 rounded-lg prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
             },
         },
         autofocus: true,
