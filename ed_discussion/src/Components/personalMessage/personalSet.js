@@ -32,8 +32,8 @@ export default function PersonalSet({userData, avatarUrl}) {
           <span className = "px-8 py-4 rounded-md border-solid border-rose-500 ">主电子邮件</span>
         </div>
         <div>
-          <div className = "px-8 py-4">
-            
+          <div className = "w-1/3 px-8 py-4 px-auto">
+              更新头像
               <UploadButton
                 type={"submit"}
                 endpoint="imageUploader"                    
