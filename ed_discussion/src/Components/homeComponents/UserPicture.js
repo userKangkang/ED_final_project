@@ -28,8 +28,8 @@ export default function UserPicture({person}) {
                 </DropdownItem>
                 <DropdownItem key={"notifications"}>Notifications</DropdownItem>
                 <DropdownItem key="logout" color="danger">
-                    <form action={logOut} >
-                        <button type="submit" className="w-full h-full">
+                    <form action={logOut}>
+                        <button type="submit" className="w-full h-full flex">
                             Log out
                         </button>
                     </form>
