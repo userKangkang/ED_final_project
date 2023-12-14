@@ -1,7 +1,8 @@
 "use server"
 import {sql} from "@vercel/postgres";
 import bcrypt from "bcrypt";
-import {redirect} from "next/navigation";
+import {permanentRedirect, redirect} from "next/navigation";
+import {NextResponse} from "next/server";
 
 export async function onSignUp(email, password, confirmPassword, username) {
     if (password !== confirmPassword) {
@@ -15,5 +16,6 @@ export async function onSignUp(email, password, confirmPassword, username) {
         } catch (error) {
             console.log(error);
         }
+        redirect("/login");
     }
 }
