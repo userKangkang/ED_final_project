@@ -6,7 +6,7 @@ export default function HomePage() {
     return(
     <>
       <div>
-      <Card className="max-w-[400px]" as={Link} href={"/courses/cs61b"}>
+      <Card className="max-w-[400px] m-4" as={Link} href={"/courses/cs61b"}>
       <CardHeader className="flex gap-3">
         
         <div className="flex flex-col">
