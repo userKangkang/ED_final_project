@@ -64,13 +64,13 @@ export default function HomePage() {
                 <div className="flex flex-col  rounded-md w-[50%] mr-10 max-w-70">
                   <div className="px-8 py-6 border-2 border-indigo-100 rounded-md ">
                     <p className="py-2 text-3xl ">Each lesson is independent;</p>
-                <p className="py-2 text-3xl ">All of the messages are divided into five parts:General Lectures Vitamins Projects Social and All;</p>
+                <p className="py-2 text-3xl ">All of the messages are divided into five parts:General, Lectures, Vitamins, Projects and Social;</p>
                 <p className="py-2 text-3xl ">You can get into kinds and check the information or create a new theme by your self.Discuss and comment in each theme.</p>
                   </div>
                 </div>
 
               </div>
-                <div className="max-w-64">
+                <div className="max-w-full">
                   <SelectToLearn className="flex flex-col justigfy-center h-300"/>
                 </div>
 

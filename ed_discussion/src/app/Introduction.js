@@ -20,7 +20,7 @@ export default function SelectToLearn() {
       const ProjectsKey = "Projects introduction"
       const SocialKey = "Social introduction"
     return (
-      <Accordion variant="splitted">
+      <Accordion variant="splitted" className="w-full">
         <AccordionItem key={GenneralKey} aria-label="Accordion 1" title={<div>General</div>}>
           {GeneralContent}
         </AccordionItem>
