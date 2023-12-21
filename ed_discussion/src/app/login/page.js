@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import LoginForm from "./LoginForm";
+import LoginForm from "./loginForm";
 
 const fadeInKeyframes = `
   @keyframes fadeIn {
@@ -20,7 +20,7 @@ export default function LoginPage() {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 2000);
+    }, 100);
   }, []);
 
   return (

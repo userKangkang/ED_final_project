@@ -13,8 +13,6 @@ import MiddleLinks from "@/app/courses/middlelinks";
 
 export const dynamicParams = false;
 
-export const topData = await sql`SELECT * FROM ThemeMessage order by posttime DESC;`;
-// console.log(topData);
 
 export default function Layout({children}) {
 

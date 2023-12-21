@@ -7,7 +7,8 @@ import { auth } from "@/auth"
 import getUser from "@/app/api/getuser";
 import { getAllUser } from "@/app/api/getuser";
 
-export async function generateDynamicParams() {
+export const dynamicParams = true // true | false,npm
+export async function generateStaticParams() {
     const datas = await getTopDataIds();
     return datas.map((row) => ({
                 id: row.id,
@@ -15,7 +16,7 @@ export async function generateDynamicParams() {
     )
 }
 
-export async function getCommentData(rows)
+async function getCommentData(rows)
 {
     const allUsr = await getAllUser();
     const UsrAvaMap = allUsr.map((usr) => (

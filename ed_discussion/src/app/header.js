@@ -1,4 +1,5 @@
 import React from"react";
+import {Link} from "@nextui-org/react";
 
 export default function EnterHeader(){
     return (
@@ -10,7 +11,7 @@ export default function EnterHeader(){
             ['Advantages', '/team'],
             ['Suggestions', '/reports'],
         ].map(([title, url]) => (
-        <a href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
+        <Link href={url} key={title} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</Link>
         ))}
         </nav>
         </div>

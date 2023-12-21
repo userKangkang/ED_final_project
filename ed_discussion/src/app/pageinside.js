@@ -48,7 +48,7 @@ export default function HomePage() {
                         <p className="flex flex-row px-50 justify-center font-semibold text-5xl">Join us!</p>
                     </div>
                     <div className="flex justify-center gap-40 items-center py-8 ml-8 mr-8">
-                        <Button color="success"><Link href={"login"} className="text-gray-50 w-full ">Login</Link></Button> 
+                        <Button color="success"><Link href={"login"} className="text-gray-50 w-full ">Login</Link></Button>
                         <Button color="primary"><Link href={"signup"}className="text-gray-50">Register</Link></Button>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ export default function HomePage() {
             <div className="flex flex-row">
                 <Divider className="my-300"></Divider>
             </div>
-            
+
             <div className="py-8 flex flex-col justify-center" id="section1">
               <div className="flex flex-col ">
                 <div className="flex flex-row justify-between mb-10">
@@ -68,15 +68,15 @@ export default function HomePage() {
                 <p className="py-2 text-3xl ">You can get into kinds and check the information or create a new theme by your self.Discuss and comment in each theme.</p>
                   </div>
                 </div>
-                
-              </div> 
+
+              </div>
                 <div className="max-w-64">
                   <SelectToLearn className="flex flex-col justigfy-center h-300"/>
-                </div>               
-                  
-              </div>            
+                </div>
+
+              </div>
             </div>
-            
+
             <div className="flex flex-row">
                 <Divider className="my-300"></Divider>
             </div>
@@ -90,7 +90,7 @@ export default function HomePage() {
                           <p className="py-2 text-3xl ">Clearer for you to find imformation about each classes;</p>
                           <p className="py-2 text-3xl ">Easier to discuss questions;</p>
                           <p className="py-2 text-3xl ">More convenient to contact;</p>
-                      </div>                  
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -104,32 +104,20 @@ export default function HomePage() {
                   <div className="flex flex-row justify-between">
                     <p className="text-7xl flex flex-col justify-center px-10">Suggestions</p>
                     <div className="lex flex-col rounded-md w-[50%] mr-10 max-w-70 border-2 border-indigo-100">
-                      <div className="px-8 py-6 ">            
-                          <p className="py-2 text-3xl">If meet problems when using AHAT, don't hesitate to contact us;</p>
-                          <p className="py-2 text-3xl">We're always here to give you better user's experience;</p>
+                      <div className="px-8 py-6 ">
+                          <p className="py-2 text-3xl">If meet problems when using AHAT, do not hesitate to contact us;</p>
+                          <p className="py-2 text-3xl">We are always here to give you better user experience;</p>
                           <p className="py-2 text-2xl">Our wechat: Zn13137852909</p>
-                      </div>                  
+                      </div>
                     </div>
                   </div>
               </div>
-                <div>
-                    <p className="text-3xl"></p>
-                </div>
-                <div className="">
-                    <p></p>
-                <p></p>
-                </div>
-                
             </div>
-            <div className="flex flex-row">
                 <Divider className="my-300"></Divider>
-            </div>
             </div>
             <div className="flex flex-row justify-center">
               ©AHAT
             </div>
-            <form action={null}>
-            </form>
         </main>
     );
 }
