@@ -16,10 +16,10 @@ export default function PersonalSideBar() {
     //   label: "通知",
     //   url: "/bell.svg"
     // },
-    { key: "画板",
-      label: "外观",
-      url: "/bx-palette.svg"
-    },
+    // { key: "画板",
+    //   label: "外观",
+    //   url: "/bx-palette.svg"
+    // },
     // {
     //   key: "global",
     //   label: "语言和地区",

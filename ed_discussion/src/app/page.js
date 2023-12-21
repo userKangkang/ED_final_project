@@ -15,7 +15,7 @@ export default async function HomePage() {
                     </div>
                     <div className="flex justify-center gap-80 items-center w-full py-8">
                         <Button color="success"><Link href={"courses/cs61b"} className="text-gray-50 w-full">Login</Link></Button> 
-                        <Button color="primary"><Link className="text-gray-50">Register</Link></Button>
+                        <Button color="primary"><Link href={"signup"} className="text-gray-50">Register</Link></Button>
                     </div>
                 </div>
             </div>

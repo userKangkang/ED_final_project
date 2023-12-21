@@ -31,9 +31,10 @@ export default function PersonalSet({userData, avatarUrl}) {
           <span className = "px-8 py-4">{userData.email}</span>
           <span className = "px-8 py-4 rounded-md border-solid border-rose-500 ">主电子邮件</span>
         </div>
-        <div>
-          <div className = "px-8 py-4">
-            
+        <div className={"ml-20 max-w-[150px]"}>
+          <div className = "max-w-full px-8 py-4 flex flex-col justify-center items-center">
+              <div>更新头像</div>
+              <div>
               <UploadButton
                 type={"submit"}
                 endpoint="imageUploader"                    
@@ -49,7 +50,7 @@ export default function PersonalSet({userData, avatarUrl}) {
                   alert(`ERROR! ${error.message}`);
               }}
               />
-            
+            </div>
               
           </div>
         </div>

@@ -33,7 +33,8 @@ export default function Layout({children}) {
                 </div>
                 <div className={"w-96 border-solid border-r-2 border-gray-400 h-screen overflow-y-scroll min-w-[300px]"}>
                     <SearchBox/>
-                    <MiddleLinks />
+                    <MiddleLinks isquestion={true}/>
+                    <MiddleLinks isquestion={false}/>
                 </div>
                 {/* 开始制作的时候将下面的两个div注释掉，替代为PersonalSet */}
                 {/* 制作完成后请恢复原样，即取消div的注释，给PersonalSet加注释 */}

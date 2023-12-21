@@ -111,7 +111,11 @@ export default async function Cs61bQuestions({params}) {
                 <div className="px-2 ">
                     {commentsDatas}
                 </div>
+<<<<<<< HEAD
                 <div>
+=======
+                <div className="fixed bottom-0">
+>>>>>>> origin/question
                     <SubmitForm id={id}/>
                 </div>
         </div>

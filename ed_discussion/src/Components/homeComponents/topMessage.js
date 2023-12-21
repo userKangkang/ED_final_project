@@ -15,8 +15,14 @@ export default function TopMessages(props) {
             return true;
         }
     });
-
+    console.log(props.isquestion);
     const datas = Qdatas.filter(data => {
+        
+        if(!(data.isQuestion === props.isquestion)) {
+            console.log(data.isquestion);
+            console.log(props.isquestion);
+            return false;
+        }
         if(query.get("type")?.toString() === "All" || !query.get("type")) {
             return true;
         } else if (data.type === query.get("type")?.toString()) {
@@ -28,7 +34,8 @@ export default function TopMessages(props) {
 
     const messageList = datas.map(data => {
         const icon = function () {
-            if(data.isQuestion) {
+            if(!data.isQuestion) {
+                console.log(data.title);
                 return <Message/>;
             } else {
                 return <Info/>;
@@ -55,7 +62,11 @@ export default function TopMessages(props) {
 
     return(
         <>
-          <div className={"w-full h-5 bg-gray-400"}></div>
+        <div className={"w-full h-5 bg-gray-400 text-xs flex items-center p-3"}>
+            {props.isquestion ? "问题" : "帖子"}
+        </div>
+        <div className={"min-h-[43%] max-h-[43%] overflow-y-scroll"}>
+          
           <div className="w-full">
             
             <Listbox aria-label="Actions"
@@ -64,6 +75,7 @@ export default function TopMessages(props) {
             </Listbox>
             </div>
           {/* <div className={"my-0 mx-auto text-xs flex justify-center bg-white"}>更多</div> */}
+        </div>
         </>
     );
 }
