@@ -1,34 +1,31 @@
-"use client"
-import {Button, Input} from "@nextui-org/react";
-import { useState } from "react";
-import {onSignUp} from "@/app/signup/submit";
+import { Button, Input, Textarea } from "@nextui-org/react";
 
 export default function SignUpPage() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassowrd] = useState("");
-    const [username, setUsername] = useState("");
-
-    return (
-        <div>
-            <form action={() => {
-                onSignUp(email, password, confirmPassword, username);
-            }}>
-                <Input type="email" label="Email" placeholder="Enter your email" onChange={(e) => {
-                    setEmail(e.target.value);
-                }}/>
-                <Input type="text" label="Username" placeholder="Enter your username" onChange={(e) => {
-                    setUsername(e.target.value);
-                }}/>
-                <Input type="password" label="Password" placeholder="Enter your password" onChange={(e) => {
-                    setPassword(e.target.value);
-                }}/>
-                <Input type="password" label="ConfirmPassword" placeholder="Confirm your password" onChange={(e) => {
-                    setConfirmPassowrd(e.target.value);
-                }}/>
-                { password === confirmPassword ? <p className="text-green-500">The passwords are the same!</p> : <p className="text-red-500">The passwords are not the same!</p> }
-                <Button type="submit">Sign Up</Button>
-            </form>
+  return (
+    <div className="flex flex-col justify-center items-center h-screen bg-gray-100 bg-gradient-to-r from-blue-300 via-white-500">
+      <form className="w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h1 className="text-4xl font-bold mb-8">Sign Up</h1>
+        <div className="mb-2">
+          <Textarea
+            label="email"
+            variant="bordered"
+            placeholder="Enter your email"
+            defaultValue=""
+          />
         </div>
-    );
+        <div className="mb-2">
+          <Textarea
+            label="password"
+            variant="bordered"
+            placeholder="Enter your password"
+            defaultValue=""
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <Button type="submit">Sign Up</Button>
+        </div>
+      </form>
+    </div>
+  );
 }
+
