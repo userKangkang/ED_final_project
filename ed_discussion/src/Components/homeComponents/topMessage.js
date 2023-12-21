@@ -8,7 +8,7 @@ import { Link } from "@nextui-org/react";
 export default function TopMessages(props) {
     const query = props.searchParams;
 
-    const datas = props.datas.filter(data => {
+    const Qdatas = props.datas.filter(data => {
         if (query.get("query")?.toString() && !(data.title.includes(query.get("query")?.toString()))) {
             return false;
         } else {

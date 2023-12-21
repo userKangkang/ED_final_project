@@ -13,11 +13,6 @@ export default async function MiddleLinks(props) {
         color: "red-500",
         author: row.usr,
         date: new Date(row.posttime).toLocaleTimeString(),
-<<<<<<< HEAD
     }));
     return <NewMiddleLinks datas={DATA1} isquestion={props.isquestion}/>
-=======
-    }))
-    return <NewMiddleLinks datas={DATA1}/>
->>>>>>> auth
 }
