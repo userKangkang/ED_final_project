@@ -15,7 +15,6 @@ export default function TopMessages(props) {
             return true;
         }
     });
-    console.log(props.isquestion);
     const datas = Qdatas.filter(data => {
         
         if(!(data.isQuestion === props.isquestion)) {

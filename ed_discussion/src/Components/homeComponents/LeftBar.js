@@ -9,7 +9,6 @@ export default function LeftBar() {
         <ListboxWrapper>
             <Listbox
                 aria-label="Actions"
-                onAction={(key) => alert(key)}
             >
                 <ListboxItem key={"General"}>
                     <TypeTitle color="bg-red-500" name="General"/>
