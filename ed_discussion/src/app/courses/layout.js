@@ -11,8 +11,6 @@ import HistoryMessages from "@/Components/homeComponents/historyMessage";
 import {sql} from "@vercel/postgres";
 import MiddleLinks from "@/app/courses/middlelinks";
 
-export const dynamicParams = false;
-
 
 export default function Layout({children}) {
 

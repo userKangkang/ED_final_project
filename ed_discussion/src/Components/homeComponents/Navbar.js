@@ -22,6 +22,7 @@ export default async function Header() {
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
                     <NavbarItem isActive>
                         <Link href="/courses/cs61b" className="text-purple-700" aria-current="page">
+
                             工程学导论
                         </Link>
                     </NavbarItem>
