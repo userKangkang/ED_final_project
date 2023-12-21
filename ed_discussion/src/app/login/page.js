@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import LoginForm from "./loginForm";
+import LoginForm from "./loginform";
 
 const fadeInKeyframes = `
   @keyframes fadeIn {
