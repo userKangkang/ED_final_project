@@ -13,7 +13,7 @@ export default async function postQuestion(title, type, editor) {
     const now = new Date();
     const date = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(0, 10) + " " + new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(11, 19);
     const id = Date.now();
-    await sql`INSERT INTO TopMessage (id, usr, title, type, content, date) VALUES (${id}, ${usr}, ${title}, ${type}, ${editor}, ${date});`;
+    await sql`INSERT INTO themeMessage (Tid, usr, title, type, content, postTime, email) VALUES (${id}, ${usr}, ${title}, ${type}, ${editor}, ${date}, ${email});`;
     revalidatePath("/courses");
     redirect("/courses/cs61b");
 }

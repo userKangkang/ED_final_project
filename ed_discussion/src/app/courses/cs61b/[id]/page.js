@@ -1,13 +1,11 @@
-import {sql} from "@vercel/postgres";
 import { placeTopMessageContent } from "./placeMessageContent";
-import {Image, User} from "@nextui-org/react";
-import { Link } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
+import {Image, User, Card, CardBody, CardHeader, Divider,CardFooter,Link} from "@nextui-org/react";
 import {getComments} from "@/app/api/routes/subMessages";
 import {getTopDataIds} from "@/app/api/routes/topMessage";
 import SubmitForm from "@/app/courses/cs61b/[id]/submitForm";
-import React from "react";
-import { Card, CardHeader, CardBody, CardFooter, Divider} from "@nextui-org/react";
+import { auth } from "@/auth"
+import getUser from "@/app/api/getuser";
+import { getAllUser } from "@/app/api/getuser";
 
 export async function generateDynamicParams() {
     const datas = await getTopDataIds();
@@ -86,14 +84,13 @@ export default async function Cs61bQuestions({params}) {
     const commentsDatas = await getCommentData(comments.rows);
 
 
-
     return (
         <div className={"w-full p-2"}>
-            <div className="ml-8 flex flex-col text-4xl text-amber-400 font-serif">
+            <div className="ml-8 flex flex-col text-4xl text-amber-400 font-serif ">
                 <h1 className="px-2 py-3">{idData.title}</h1>
             </div>
-            <Card>
-                <CardHeader className="flex flex-row justify-between">
+            <Card className="mb-4">
+                <CardHeader className="flex flex-row justify-between ">
                         <User
                             name={idData.usr}
                             description="staff"
@@ -111,13 +108,14 @@ export default async function Cs61bQuestions({params}) {
                 </CardBody>
             </Card>
 
-            <div className="px-2">
-                <div className="text-White ">
-                    <ul>{eachTopMessageLine}</ul>
-                </div>
-                {commentsDatas}
-            </div>
+    <Card className="max-w-[1000px] mb-4">
+      <CardBody> 
+        <p>{commentsDatas}</p>
+      </CardBody>
+      <Divider/>
+    </Card>;
             <SubmitForm id={id}/>
         </div>
+
     )
-}
+    }
