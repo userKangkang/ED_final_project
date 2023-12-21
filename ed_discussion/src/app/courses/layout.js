@@ -10,7 +10,7 @@ import HistoryMessages from "@/Components/homeComponents/historyMessage";
 
 import {sql} from "@vercel/postgres";
 import MiddleLinks from "@/app/courses/middlelinks";
-
+export const dynamic = 'force-dynamic';
 
 export default function Layout({children}) {
 
