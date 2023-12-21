@@ -1,7 +1,7 @@
 "use server"
 import {getTopDataLinks} from "@/app/api/routes/topMessage";
 import {topData} from "@/app/courses/layout";
-import NewMiddleLinks from "@/app/courses/newMiddleLinks";
+import NewMiddleLinks from "./newMiddleLinks";
 
 export default async function MiddleLinks(props) {
     const topData = await getTopDataLinks();
