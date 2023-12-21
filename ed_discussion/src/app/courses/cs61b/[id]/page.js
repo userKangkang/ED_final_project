@@ -87,6 +87,7 @@ export default async function Cs61bQuestions({params}) {
 
     return (
         <div className={"w-full p-2"}>
+        <div className={"w-full p-2 max-h-[83%] overflow-y-scroll"} >
             <div className="ml-8 flex flex-col text-4xl text-amber-400 font-serif">
                 <h1 className="px-2 py-3">{idData.title}</h1>
             </div>
@@ -111,9 +112,10 @@ export default async function Cs61bQuestions({params}) {
                 <div className="px-2 ">
                     {commentsDatas}
                 </div>
-                <div className="fixed bottom-0">
+                </div>
+                <div>
                     <SubmitForm id={id}/>
                 </div>
-        </div>
+                </div>
     )
 }
