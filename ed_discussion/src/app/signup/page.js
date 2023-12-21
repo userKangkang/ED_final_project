@@ -46,7 +46,7 @@ export default function SignUpPage() {
               onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        {password === confirmPassword ? <p className={"text-green-500"}> Password and confirm password are the same!< /p> : <p className="text-red-500">Password and confirm password are not the same</p>}
+        {password === confirmPassword ? <p className={"text-green-500"}> Password and confirm password are the same!</p> : <p className="text-red-500">Password and confirm password are not the same</p>}
         <div className="flex items-center justify-between">
           <Button type="submit">Sign Up</Button>
         </div>
