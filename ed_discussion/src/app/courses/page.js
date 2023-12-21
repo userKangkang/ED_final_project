@@ -6,6 +6,22 @@ export default function HomePage() {
     return(
     <>
       <div>
+          <Card className="max-w-[400px] m-4" as={Link} href={"/courses/cs61b"}>
+              <CardHeader className="flex gap-3">
+
+                  <div className="flex flex-col">
+                      <p className="text-md">上海交通大学生存指导</p>
+                      <p className="text-small text-default-500">Survive666</p>
+                  </div>
+              </CardHeader>
+              <Divider/>
+              <CardBody>
+                  <p>上海交通大学是一款自研游戏，本课程旨在指导当代大学牲们在危机四伏的校园中生存</p>
+              </CardBody>
+              <Divider/>
+              <CardFooter>
+              </CardFooter>
+          </Card>
       <Card className="max-w-[400px] m-4" as={Link} href={"/courses/cs61b"}>
       <CardHeader className="flex gap-3">
         
